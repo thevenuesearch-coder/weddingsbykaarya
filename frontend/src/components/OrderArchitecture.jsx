@@ -92,7 +92,7 @@ export default function OrderArchitecture() {
         {/* LEFT */}
 
         <div className="order-left">
-          <p className="order-subtitle">THREE DAY WEDDING FLOW</p>
+          <p className="order-subtitle"></p>
 
           <h2 className="order-title">
             The order is the <span>architecture.</span>
