@@ -1,0 +1,121 @@
+{
+  "brand": {
+    "name": "Weddings by Kaarya",
+    "tagline": "Dream. Design. Deliver.",
+    "logo_concept": "Gold elephant representing royalty, heritage, prosperity, Indian culture, grandeur."
+  },
+  "theme": "Dark Maroon Luxury Editorial (Indian Palace Luxury + Modern Minimalism + Editorial Fashion)",
+  "colors": {
+    "primary_background": "#4E1E27",
+    "secondary_background": "#5B2230",
+    "accent_gold": "#C9A46B",
+    "text_primary": "#F8F5EF",
+    "text_secondary": "#E8DAC8",
+    "rules": [
+      "MANDATORY: Use ONLY the provided palette.",
+      "NO gradients.",
+      "NO neon colors.",
+      "NO glassmorphism.",
+      "Use #4E1E27 as the main deep canvas.",
+      "Use #5B2230 for subtle section differentiations or card backgrounds.",
+      "Use #C9A46B for borders, thin dividers, buttons, and accents.",
+      "Use #F8F5EF for main headings and readable body text.",
+      "Use #E8DAC8 for metadata, captions, and secondary text."
+    ]
+  },
+  "typography": {
+    "fonts": {
+      "headings": "Cormorant Garamond, serif",
+      "body": "Inter, sans-serif"
+    },
+    "scale": {
+      "h1": "text-5xl md:text-6xl lg:text-7xl tracking-tighter leading-none",
+      "h2": "text-4xl md:text-5xl lg:text-6xl tracking-tight",
+      "h3": "text-2xl md:text-3xl lg:text-4xl",
+      "body": "text-base md:text-lg leading-relaxed",
+      "overline": "text-xs md:text-sm tracking-[0.2em] uppercase font-light"
+    },
+    "rules": [
+      "Headings must use Cormorant Garamond for a regal, magazine-like feel.",
+      "Body text must use Inter for pristine readability and high contrast.",
+      "Never center-align long paragraphs. Left-align for editorial elegance."
+    ]
+  },
+  "visual_enhancers": {
+    "borders": "Thin gold borders (border-[#C9A46B]/30). Avoid heavy blocks.",
+    "corners": "Minimal rounding (rounded-sm or rounded-none) to maintain an editorial, high-fashion edge.",
+    "shadows": "Premium soft shadows, but mostly rely on stark background contrasts instead of dropshadows.",
+    "textures": "Subtle noise or film grain overlay can be used globally if desired, but keep it extremely faint.",
+    "motifs": "Traditional Indian motifs, lotus patterns, temple-inspired corners can be implemented via thin gold SVG accents."
+  },
+  "layouts": {
+    "spacing": "Generous spacing. Use py-24, py-32, or py-48 for main sections. Let elements breathe. 2-3x normal spacing.",
+    "grid": "Bento grid for services, but spaced widely (gap-8 or gap-12). Masonry for gallery.",
+    "sections": {
+      "Hero": "Full-screen cinematic. Dark overlay (bg-[#4E1E27]/40). Logo animation on load. Headline uses masked line-by-line reveal.",
+      "About_Kaarya": "Numbered manifesto chapters. Left-aligned storytelling. Big drop caps or oversized numbers.",
+      "Signature_Services": "9 categories: Venue & Setup, Design & Décor, Planning & Coordination, Transportation & Logistics, Gifting & Guest Care, Entertainment & Performances, Beauty & Styling, Documentation & Media, Culinary. Elegant cards with thin gold borders.",
+      "Wedding_Gallery": "Editorial masonry. Images default to grayscale, fade to color on hover.",
+      "Wedding_Journey": "Vertical timeline. Minimalist gold line connecting steps: Dream, Design, Deliver, Forever.",
+      "Why_Choose_Kaarya": "Luxury icons, plenty of negative space. Symmetrical or carefully staggered grid.",
+      "Marquee": "Slow editorial marquee separating sections, using serif font, possibly outlined text.",
+      "Contact": "Luxurious wedding inquiry form. Use customized inputs with gold borders and dark backgrounds."
+    }
+  },
+  "motion": {
+    "scrolling": "Lenis for smooth momentum scrolling.",
+    "reveals": "Framer-motion scroll reveals. Fade up and slow drift. No bouncy animations.",
+    "hero_load": "Masked line-by-line reveal. Elephant logo scales down and fades into the header.",
+    "hover": "Slow, deliberate hovers. Image scale up slightly inside a clipped frame. Grayscale to color for gallery (duration-700)."
+  },
+  "accessibility": {
+    "contrast": "Ensure text over images has sufficient contrast. Use dark maroon scrims/overlays where necessary.",
+    "testing": "All interactive elements (buttons, links, forms) MUST include data-testid attributes."
+  },
+  "image_urls": [
+    {
+      "category": "Hero / Mood",
+      "url": "https://images.unsplash.com/photo-1756190564669-215843660e93?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjB3ZWRkaW5nJTIwcGFsYWNlJTIwbmlnaHR8ZW58MHx8fHwxNzg0ODk0NjQyfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Couple in traditional indian wedding attire holding hands at night palace"
+    },
+    {
+      "category": "Architecture / Palace",
+      "url": "https://images.pexels.com/photos/17067749/pexels-photo-17067749.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Illuminated traditional Indian architecture under moonlit sky"
+    },
+    {
+      "category": "Gallery / Details",
+      "url": "https://images.pexels.com/photos/35963259/pexels-photo-35963259.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Detailed close-up of a bride's traditional jewelry and ornate veil"
+    },
+    {
+      "category": "Services / Decor",
+      "url": "https://images.pexels.com/photos/32741413/pexels-photo-32741413.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "A sophisticated and elegant wedding table setting featuring a gold goblet"
+    },
+    {
+      "category": "Motif / Logo Inspiration",
+      "url": "https://images.pexels.com/photos/32329867/pexels-photo-32329867.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "A stunning golden elephant monument, symbolizing cultural heritage"
+    }
+  ],
+  "instructions_to_main_agent": [
+    "Strictly adhere to the dark maroon and gold color palette. DO NOT inject external colors or default tailwind blues/grays.",
+    "Write all React code in .js or .jsx files, NOT .tsx.",
+    "Header must have a solid or semi-solid background (e.g., bg-[#4E1E27] or bg-[#4E1E27]/95). DO NOT use a completely transparent background in the header, overlays, or any surface with content under it.",
+    "Implement Lenis for smooth scrolling.",
+    "Implement Framer Motion for cinematic text reveals (line-by-line) and scroll animations.",
+    "Gallery images must be styled with tailwind classes `grayscale transition-all duration-700 hover:grayscale-0`.",
+    "Do not use generic Shadcn components out of the box without restyling them to fit the luxury aesthetic (e.g., remove rounding, add gold borders, adjust backgrounds to maroon).",
+    "Avoid glassmorphism, bright colors, and neon glows.",
+    "Include the tagline 'Dream. Design. Deliver.' in the loading screen, hero, about section, and footer.",
+    "Add 'data-testid' to all buttons, links, and form inputs for testing purposes."
+  ],
+  "universal_guidelines_for_main_agent": [
+    "Create depth through layered design elements with z-index hierarchy, but avoiding glassmorphism per instructions.",
+    "Never apply universal transition (transition: all). Use specific transitions.",
+    "Never center align the main app container.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Missing categories of images should NOT be replaced by placeholder text. Use provided Unsplash/Pexels URLs."
+  ]
+}
