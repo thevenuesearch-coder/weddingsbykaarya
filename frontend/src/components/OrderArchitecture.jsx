@@ -7,35 +7,35 @@ gsap.registerPlugin(ScrollTrigger);
 
 const timeline = [
   {
-    day: "Day 00",
+    day: "Day 01",
     title: "Nischitartham",
     subtitle: "Engagement & ring ceremony",
     description:
       "Guest arrivals, welcome lunch, room allocation and the first pooja. Usually the calmest evening — we keep it that way on purpose.",
   },
   {
-    day: "Day 01",
+    day: "Day 02",
     title: "Mehendi & Sangeet",
     subtitle: "Henna, music, choreography",
     description:
       "Daytime henna under shade sails, evening sangeet with a live band, choreographed family sets and a show-called running order.",
   },
   {
-    day: "Day 02",
+    day: "Day 03",
     title: "Pellikuthuru & Haldi",
     subtitle: "Mangala snanam, turmeric",
     description:
       "Sunrise ritual bathing, turmeric ceremony, nadaswaram ensemble and the family's own kalash and pasupu traditions honoured exactly.",
   },
   {
-    day: "Day 03",
+    day: "Day 04",
     title: "Kalyanam",
     subtitle: "Kanyadanam · Jeelakarra Bellam · Talambralu",
     description:
       "The muhurtham drives the entire day. Mandap build overnight, guests seated 40 minutes early, banana-leaf meal served in two sittings.",
   },
   {
-    day: "Day 03",
+    day: "Day 05",
     title: "Reception",
     subtitle: "Grand Finale & Send-off",
     description:
