@@ -12,7 +12,7 @@ import Destinations from "@/components/Destinations";
 import Gallery from "@/components/Gallery";
 import Journey from "@/components/Journey";
 import Testimonials from "@/components/Testimonials";
-import Instagram from "@/components/Instagram";
+import OrderArchitecture from "@/components/OrderArchitecture";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -40,7 +40,7 @@ function App() {
         <Gallery />
         <Journey />
         <Testimonials />
-        <Instagram />
+        <OrderArchitecture />
         <FAQ />
         <Contact />
         <Footer />
