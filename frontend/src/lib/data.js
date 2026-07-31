@@ -145,7 +145,7 @@ export const DESTINATIONS = [
     venue: "Luxury Mountain Resorts",
     insight:
       "Exchange vows amidst the majestic Himalayan peaks, where crisp mountain air, breathtaking landscapes, and luxurious resorts create an unforgettable destination wedding experience.",
-    img: "/images/destinations/himalaya.webp"
+    img: "https://images.pexels.com/photos/5238635/pexels-photo-5238635.jpeg?_gl=1*vhb63t*_gcl_au*NjkyODQ0NjQuMTc4NDk3NDkyOQ..*_ga*MTg1MTY0OTY5Mi4xNzg0OTcyNjQy*_ga_8JE65Q40S6*czE3ODU0Nzc1OTkkbzUkZzEkdDE3ODU0Nzc2NTkkajYwJGwwJGgw"
   },
 
   {
@@ -157,7 +157,7 @@ export const DESTINATIONS = [
     venue: "Luxury Houseboats & Heritage Resorts",
     insight:
       "Celebrate your love amidst Kerala's tranquil backwaters, lush coconut groves, and world-class luxury resorts, offering an intimate and timeless setting for your dream wedding.",
-    img: "/images/destinations/kerala-backwaters.webp"
+    img: "https://images.pexels.com/photos/35887023/pexels-photo-35887023.png?_gl=1*zgkdcr*_gcl_au*NjkyODQ0NjQuMTc4NDk3NDkyOQ..*_ga*MTg1MTY0OTY5Mi4xNzg0OTcyNjQy*_ga_8JE65Q40S6*czE3ODU0Nzc1OTkkbzUkZzEkdDE3ODU0Nzc3NjQkajMzJGwwJGgw"
   },
 ];
 
