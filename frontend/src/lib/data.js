@@ -136,6 +136,29 @@ export const DESTINATIONS = [
     venue: "Private atolls & overwater pavilions",
     insight: "Barefoot luxury for intimate ceremonies — glass-floor pavilions above a lagoon lit by bioluminescence.",
   },
+  {
+    name: "Himalaya",
+    country: "India",
+    tag: "Mountain Weddings",
+    season: "March – June • September – November",
+    vibe: "Majestic • Serene • Luxury",
+    venue: "Luxury Mountain Resorts",
+    insight:
+      "Exchange vows amidst the majestic Himalayan peaks, where crisp mountain air, breathtaking landscapes, and luxurious resorts create an unforgettable destination wedding experience.",
+    img: "/images/destinations/himalaya.webp"
+  },
+
+  {
+    name: "Kerala Backwaters",
+    country: "India",
+    tag: "Backwater Weddings",
+    season: "October – March",
+    vibe: "Tropical • Elegant • Serene",
+    venue: "Luxury Houseboats & Heritage Resorts",
+    insight:
+      "Celebrate your love amidst Kerala's tranquil backwaters, lush coconut groves, and world-class luxury resorts, offering an intimate and timeless setting for your dream wedding.",
+    img: "/images/destinations/kerala-backwaters.webp"
+  },
 ];
 
 export const FAQS = [
