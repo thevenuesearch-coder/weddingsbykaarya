@@ -22,7 +22,7 @@ export default function Gallery() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.9, delay: (i % 3) * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              transition={{  duration: 0.55,  ease: [0.22, 1, 0.36, 1],}}
               data-testid={`gallery-item-${i}`}
               data-cursor-label="View"
               className="group relative mb-5 md:mb-6 overflow-hidden break-inside-avoid"
@@ -41,6 +41,29 @@ export default function Gallery() {
           ))}
         </div>
       </div>
+      <div className="mt-16 flex justify-end">
+       <button
+       onClick={() => {
+        if (window.location.pathname === "/") {
+          const contact = document.getElementById("contact");
+          if (contact) {
+            contact.scrollIntoView({
+              behavior: "smooth",
+            });
+          }
+          } else {
+            window.location.href = "/#contact";
+          }
+        }}
+        className="px-10 py-4 uppercase tracking-[0.32em] text-xs transition-all duration-500 hover:tracking-[0.4em]"
+        style={{
+        border: "1px solid #C9A46B",
+        color: "#C9A46B",
+      }}
+    >
+    Book a Free Call
+    </button>
+    </div>
     </section>
   );
 }

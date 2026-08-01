@@ -78,6 +78,7 @@ export const CONTACT = {
 export const DESTINATIONS = [
   {
     name: "Udaipur",
+    slug: "udaipur",
     country: "India",
     tag: "The City of Lakes",
     img: "https://images.unsplash.com/photo-1615836245337-f5b9b2303f10?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
@@ -88,6 +89,7 @@ export const DESTINATIONS = [
   },
   {
     name: "Jaipur",
+    slug: "jaipur",
     country: "India",
     tag: "The Pink City",
     img: "https://images.unsplash.com/photo-1599661046289-e31897846e41?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
@@ -98,6 +100,7 @@ export const DESTINATIONS = [
   },
   {
     name: "Goa",
+    slug: "goa",
     country: "India",
     tag: "The Coastal Escape",
     img: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
@@ -108,6 +111,7 @@ export const DESTINATIONS = [
   },
   {
     name: "Bali",
+    slug: "bali",
     country: "Indonesia",
     tag: "The Island of Gods",
     img: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
@@ -118,6 +122,7 @@ export const DESTINATIONS = [
   },
   {
     name: "Phuket",
+    slug: "phuket",
     country: "Thailand",
     tag: "The Andaman Jewel",
     img: "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
@@ -128,6 +133,7 @@ export const DESTINATIONS = [
   },
   {
     name: "Maldives",
+    slug: "maldives",
     country: "Maldives",
     tag: "The Overwater Dream",
     img: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
@@ -138,6 +144,7 @@ export const DESTINATIONS = [
   },
   {
     name: "Himalaya",
+    slug: "himalaya",
     country: "India",
     tag: "Mountain Weddings",
     season: "March – June • September – November",
@@ -150,6 +157,7 @@ export const DESTINATIONS = [
 
   {
     name: "Kerala Backwaters",
+    slug: "Kerala Backwaters",
     country: "India",
     tag: "Backwater Weddings",
     season: "October – March",
@@ -162,36 +170,156 @@ export const DESTINATIONS = [
 ];
 
 export const FAQS = [
+
   {
     q: "How far in advance should we book a destination wedding planner?",
-    a: "For a palace or resort buy-out in Udaipur, Jaipur or Bali, nine to twelve months gives you first pick of dates and rooms. We have delivered full three-day weddings in fourteen weeks — but the venue list narrows sharply under six months, and peak season (November to February) closes earliest.",
+    intro:
+      "For a palace or resort buy-out in Udaipur, Jaipur or Bali, nine to twelve months gives you first pick of dates and rooms. We have delivered full three-day weddings in fourteen weeks — but the venue list narrows sharply under six months, and peak season (November to February) closes earliest."
   },
+
+  {
+    q: "Which destinations can you plan a wedding in?",
+    intro:
+      "Anywhere our couples want to marry. We specialise in luxury destinations across India and Indonesia, with established venue and resort relationships in each. If you have a destination in mind, your concierge will tell you exactly what's possible there before you commit."
+  },
+
   {
     q: "What does a Kaarya destination wedding typically cost?",
-    a: "Most three-day celebrations we produce sit between ₹1.2 crore and ₹6 crore all-in, driven mainly by guest count, venue and decor scale. We build a line-item budget before you commit to anything, and we charge a transparent planning fee rather than taking hidden commissions from vendors.",
+    intro:
+      "Most three-day celebrations we produce sit between ₹1.2 crore and ₹6 crore all-in, driven mainly by guest count, venue and decor scale. We build a line-item budget before you commit to anything, and we charge a transparent planning fee rather than taking hidden commissions from vendors."
   },
+
   {
     q: "Do you plan weddings for NRI families based abroad?",
-    a: "Roughly half our couples live outside India. Planning runs over video calls scheduled to US, UK, UAE and Australia time zones. We handle every vendor meeting and site recce on your behalf and send weekly photo and video updates, so the first time you see the venue in person can be the week of the wedding.",
+    intro:
+      "Roughly half our couples live outside India. Planning runs over video calls scheduled to US, UK, UAE and Australia time zones. We handle every vendor meeting and site recce on your behalf and send weekly photo and video updates, so the first time you see the venue in person can be the week of the wedding."
   },
+
   {
-    q: "Which destinations do you plan weddings in?",
-    a: "Within India: Hyderabad, Udaipur, Jaipur, Jodhpur, Goa, Kerala, Rishikesh and Coorg. Internationally: Bali, Phuket, Krabi, Dubai, Ras Al Khaimah, Sri Lanka, Tuscany and the Amalfi Coast. If your venue is not on that list, ask — we have opened new destinations for couples before.",
+    q: "How does the Discovery Call work?",
+    intro:
+      "The Discovery Call is a personalised consultation with one of our Concierge Advisors.",
+
+    points: [
+      "Your wedding vision",
+      "Budget",
+      "Guest count",
+      "Preferred destinations",
+      "Planning requirements",
+      "Existing bookings",
+      "Travel and accommodation needs"
+    ],
+
+    outro:
+      "Following the session, we'll recommend the most suitable concierge service for your wedding."
   },
+
+  {
+    q: "What if I don't know where I want to get married?",
+    intro:
+      "That's one of the most common reasons couples engage us.",
+
+    points: [
+      "Budget",
+      "Guest experience",
+      "Accessibility",
+      "Seasonality",
+      "Venue options",
+      "Planning complexity"
+    ],
+
+    outro:
+      "Our goal is to help you confidently choose the destination that's right for you."
+  },
+
+  {
+    q: "Can you help if I've already booked my venue?",
+    intro:
+      "Absolutely. Many couples come to us after securing a venue and need support with:",
+
+    points: [
+      "Planner recommendations",
+      "Vendor sourcing",
+      "Guest travel",
+      "Accommodation management",
+      "Destination advice",
+      "Wedding team selection"
+    ],
+
+    outro:
+      "We can tailor our support based on where you are in the planning journey."
+  },
+
+  {
+    q: "Can you help with guest travel and accommodation?",
+    intro:
+      "Yes.This is one of our key areas of expertise.We can assist with : ",
+
+    points: [
+      "Accommodation recommendations",
+      "Hotel room blocks",
+      "Guest travel planning",
+      "Flight coordination",
+      "Airport transfers",
+      "Welcome events",
+      "Recovery events",
+      "Group travel experiences"
+    ],
+
+    outro:
+      "Our goal is to create a seamless experience for both you and your guests."
+  },
+
+    {
+    q: "How long does the sourcing process take?",
+    intro:
+      "Timeframes vary depending on your destination and requirements. In most cases:",
+
+    points: [
+      "Venue shortlists are delivered within 7–14 business days",
+      "Planner recommendations within 5–7 business days",
+      "Vendor recommendations within 5–10 business days",
+    ],
+  },
+
   {
     q: "Can you run traditional South Indian and Telugu ceremonies correctly?",
-    a: "Yes. Nischitartham, pellikuthuru, mangala snanam, kanyadanam, jeelakarra bellam, talambralu and the reception are planned around your family purohit's muhurtham, not around our run sheet. We also produce Marwari, Punjabi, Kannadiga, Tamil Iyer and Nizami-style celebrations.",
+    intro:
+      "Yes. Nischitartham, pellikuthuru, mangala snanam, kanyadanam, jeelakarra bellam, talambralu and the reception are planned around your family purohit's muhurtham, not around our run sheet. We also produce Marwari, Punjabi, Kannadiga, Tamil Iyer and Nizami-style celebrations."
   },
+
+   {
+    q: "What happens after I've secured my venue?",
+    intro:
+      "Once your venue and key partners are secured, we facilitate introductions and help ensure a smooth transition into the planning phase.",
+
+    outro:
+      "Where applicable, our planner will take the lead on logistics, timelines and wedding execution, while we remain available as a trusted advisor."
+  },
+
   {
-    q: "Do you take on only the decor, or only the venue?",
-    a: "We prefer full-service because that is where we protect you best, but we do take partial mandates — design and decor only, or hospitality and guest logistics only. Tell us the scope in the form below and we will quote against exactly that.",
-  },
+    q: "How do you select planners and vendors?",
+    intro:
+      "We carefully curate recommendations based on:",
+
+    points: [
+      "Your wedding style",
+      "Budget",
+      "Destination",
+      "Guest experience goals",
+      "Personality fit",
+      "Service requirements"
+    ],
+
+    outro:
+      "We only recommend professionals we believe are aligned with your wedding vision and expectations."
+  }
 ];
 
 export const NAV = [
   { label: "The Studio", id: "about" },
-  { label: "Destinations", id: "destinations" },
   { label: "Portolio", id: "gallery" },
   { label: "Journey", id: "journey" },
+  { label: "Destinations", id: "destinations" },
   { label: "Contact", id: "contact" },
 ];

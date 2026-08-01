@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import { MapPin, CalendarDays, Sparkles, Landmark, ArrowRight } from "lucide-react";
@@ -26,6 +27,7 @@ const NamesMarquee = () => {
 
 function DestinationPanel({ d, index }) {
   const ref = useRef(null);
+  const navigate = useNavigate();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const yImg = useTransform(scrollYProgress, [0, 1], ["-16%", "16%"]);
   const scaleImg = useTransform(scrollYProgress, [0, 1], [1.25, 1.05]);
@@ -55,14 +57,11 @@ function DestinationPanel({ d, index }) {
     <div ref={ref} data-testid={`destination-${index}`} className="relative py-16 md:py-24">
       <div className={`mx-auto max-w-[1400px] px-6 md:px-10 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center ${left ? "" : "lg:[direction:rtl]"}`}>
         {/* Image with 3D tilt + parallax */}
-        <div className="lg:col-span-7 [direction:ltr]" style={{ perspective: 1200 }} data-cursor-label="Explore">
+        <div className="lg:col-span-7 [direction:ltr]" style={{ perspective: 1200 }} data-cursor-label="VIEW">
           <motion.div
-            onMouseMove={onMove}
-            onMouseLeave={onLeave}
-            style={{ rotateX: rX, rotateY: rY, transformStyle: "preserve-3d" }}
-            className="relative overflow-hidden"
+            onClick={() => navigate(`/destination/${d.slug}`)}
           >
-            <div className="relative overflow-hidden" style={{ border: "1px solid rgba(201,164,107,0.3)" }}>
+            <div className="relative overflow-hidden cursor-pointer" style={{ border: "1px solid rgba(201,164,107,0.3)" }}>
               <motion.img
                 style={{ y: yImg, scale: scaleImg }}
                 src={d.img}
