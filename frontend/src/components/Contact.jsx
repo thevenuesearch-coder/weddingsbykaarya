@@ -74,7 +74,11 @@ export default function Contact() {
     <section id="contact" data-testid="contact-section" className="relative py-28 md:py-44 px-6 md:px-10" style={{ backgroundColor: "#4E1E27" }}>
       <div className="mx-auto max-w-[1300px]">
         <div className="text-center">
-          <Elephant className="w-14 h-12 mx-auto mb-6" />
+          <img
+  src="/logo.png"
+  alt="Kaarya Logo"
+  className="w-14 h-14 mx-auto mb-6 object-contain"
+/>
           <Reveal><p className="text-xs tracking-[0.4em] uppercase" style={{ color: "#C9A46B" }}>Begin Your Wedding Journey</p></Reveal>
           <Reveal delay={0.1}>
             <h2 className="mt-4 font-serif-display font-light text-4xl md:text-6xl" style={{ color: "#F8F5EF" }}>Tell us the date.</h2>
