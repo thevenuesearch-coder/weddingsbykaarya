@@ -25,10 +25,10 @@ export default function Loader({ onDone }) {
           <div className="relative flex items-center justify-center">
             <Mandala className="absolute w-[280px] h-[280px] md:w-[360px] md:h-[360px] animate-spin-slow opacity-40" />
             <img
-  src="/logo.png"
-  alt="Kaarya Logo"
-  className="w-14 h-14 mx-auto mb-6 object-contain"
-/>
+              src="/logo1.png"
+              alt="Kaarya Logo"
+              className="w-22 h-20 mx-auto mb-8 object-contain"
+            />
           </div>
           <motion.div
             className="mt-10 text-center"

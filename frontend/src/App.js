@@ -16,7 +16,7 @@ import Destinations from "@/components/Destinations";
 import Gallery from "@/components/Gallery";
 import Journey from "@/components/Journey";
 import Testimonials from "@/components/Testimonials";
-import OrderArchitecture from "@/components/OrderArchitecture";
+import Collaborations from "@/components/Collaborations";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -32,7 +32,7 @@ function HomePage() {
       <Gallery />
       <Journey />
       <Testimonials />
-      <OrderArchitecture />
+      <Collaborations />
       <Destinations />
       <FAQ />
       <Contact />

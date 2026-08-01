@@ -43,26 +43,20 @@ export default function Gallery() {
       </div>
       <div className="mt-16 flex justify-end">
        <button
-       onClick={() => {
-        if (window.location.pathname === "/") {
-          const contact = document.getElementById("contact");
-          if (contact) {
-            contact.scrollIntoView({
-              behavior: "smooth",
-            });
-          }
-          } else {
-            window.location.href = "/#contact";
-          }
-        }}
-        className="px-10 py-4 uppercase tracking-[0.32em] text-xs transition-all duration-500 hover:tracking-[0.4em]"
-        style={{
-        border: "1px solid #C9A46B",
-        color: "#C9A46B",
-      }}
-    >
-    Book a Free Call
-    </button>
+  onClick={() =>
+    window.open(
+      "https://calendly.com/weddingsbykaarya/weddingsbykaarya-consultation-call",
+      "_blank"
+    )
+  }
+  className="px-10 py-4 uppercase tracking-[0.32em] text-xs transition-all duration-500 hover:tracking-[0.4em]"
+  style={{
+    border: "1px solid #C9A46B",
+    color: "#C9A46B",
+  }}
+>
+  Book a Discovery Free Call
+</button>
     </div>
     </section>
   );

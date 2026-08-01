@@ -131,17 +131,19 @@ export const DESTINATIONS = [
     venue: "Beachfront estates & island villas",
     insight: "Longtail baraats across turquoise bays and lantern-lit receptions on private Andaman shores.",
   },
+
   {
-    name: "Maldives",
-    slug: "maldives",
-    country: "Maldives",
-    tag: "The Overwater Dream",
-    img: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
+    name: "Sri Lanka",
+    slug: "srilanka",
+    country: "Sri Lanka",
+    tag: "Atlantic Ambience",
+    img: "https://images.pexels.com/photos/319892/pexels-photo-319892.jpeg?_gl=1*18h4jco*_ga*MjI0NzAxMTY1LjE3ODQ3ODg2ODI.*_ga_8JE65Q40S6*czE3ODU1ODUwMDIkbzckZzEkdDE3ODU1ODUwMjAkajQyJGwwJGgw",
     season: "Nov – Apr",
-    vibe: "Intimate & Ethereal",
-    venue: "Private atolls & overwater pavilions",
-    insight: "Barefoot luxury for intimate ceremonies — glass-floor pavilions above a lagoon lit by bioluminescence.",
+    vibe: "Breezy & Barefoot",
+    venue: "Luxury cliff resorts",
+    insight: "A paradise of pristine beaches and oceanfront luxury, perfect for an intimate destination wedding.",
   },
+
   {
     name: "Himalaya",
     slug: "himalaya",

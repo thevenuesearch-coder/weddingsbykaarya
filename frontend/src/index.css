@@ -98,7 +98,7 @@ html.lenis, html.lenis body { height: auto; }
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
-.animate-marquee { animation: marquee 10s linear infinite; }
+.animate-marquee { animation: marquee 5s linear infinite; }
 
 /* Gold text outline for marquee */
 .text-outline-gold {

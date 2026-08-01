@@ -81,19 +81,11 @@ export default function Header() {
             className="w-10 h-10 object-contain transition-transform duration-500 group-hover:scale-110"
           />
 
-          <span className="flex flex-col leading-none text-left">
-            <span
-              className="font-serif-display text-xl md:text-2xl"
-              style={{ color: "#F8F5EF" }}
-            >
-              Kaarya
-            </span>
-
-            <span
-              className="text-[0.55rem] tracking-[0.3em] uppercase"
-              style={{ color: "#C9A46B" }}
-            ></span>
-          </span>
+          <img
+  src="/kaarya1.png"   // Change to logo.png if that's the one you prefer
+  alt="Kaarya"
+  className="h-16 md:h-40 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+/>
         </button>
 
         {/* Desktop Navigation */}
