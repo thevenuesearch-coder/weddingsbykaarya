@@ -11,7 +11,6 @@ import { CONTACT } from "../lib/data";
 import {
   Instagram,
   Linkedin,
-  Twitter,
   Youtube,
 } from "lucide-react";
 
@@ -206,15 +205,7 @@ export default function Contact() {
       <Linkedin size={20} />
     </a>
 
-    <a
-      href="https://x.com/weddingsbykaarya"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="transition-all duration-300 hover:scale-110 hover:text-[#C9A46B]"
-      style={{ color: "#E8DAC8" }}
-    >
-      <Twitter size={20} />
-    </a>
+    
 
     <a
       href="https://youtube.com/@weddingsbykaarya"

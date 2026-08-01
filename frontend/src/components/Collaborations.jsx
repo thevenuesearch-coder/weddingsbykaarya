@@ -110,7 +110,7 @@ export default function Collaborations() {
             width: "max-content",
             alignItems: "center",
             gap: "90px",
-            animation: "collabScroll 35s linear infinite",
+            animation: "collabScroll 15s linear infinite",
             animationPlayState: paused ? "paused" : "running",
           }}
         >
