@@ -7,7 +7,11 @@ export default function Footer() {
     <footer data-testid="site-footer" className="relative pt-20 pb-10 px-6 md:px-10" style={{ backgroundColor: "#5B2230", borderTop: "1px solid rgba(201,164,107,0.25)" }}>
       <div className="mx-auto max-w-[1300px]">
         <div className="text-center">
-          <Elephant className="w-16 h-14 mx-auto mb-5" />
+         <img
+  src="/logo.png"
+  alt="Kaarya Logo"
+  className="w-14 h-14 mx-auto mb-6 object-contain"
+/>
           <h3 className="font-serif-display text-3xl md:text-4xl" style={{ color: "#F8F5EF" }}>Weddings by Kaarya</h3>
           <p className="mt-3 text-xs tracking-[0.4em] uppercase" style={{ color: "#C9A46B" }}>Dream. Design. Deliver.</p>
           <LotusDivider className="my-10" />

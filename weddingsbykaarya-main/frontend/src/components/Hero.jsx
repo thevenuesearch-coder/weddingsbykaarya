@@ -71,7 +71,11 @@ export default function Hero() {
           transition={{ delay: 0.2, duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
           className="mb-6"
         >
-          <Elephant className="w-16 h-14 md:w-20 md:h-16 mx-auto" />
+          <img
+  src="/logo.png"
+  alt="Kaarya Logo"
+  className="w-14 h-14 mx-auto mb-6 object-contain"
+/>
         </motion.div>
 
         <motion.p

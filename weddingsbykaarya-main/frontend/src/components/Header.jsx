@@ -34,7 +34,11 @@ export default function Header() {
     >
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 flex items-center justify-between h-20">
         <button data-testid="logo-home" onClick={() => go("hero")} className="flex items-center gap-3 group">
-          <Elephant className="w-9 h-8 transition-transform duration-500 group-hover:-translate-y-0.5" />
+          <img
+  src="/logo.png"
+  alt="Kaarya Logo"
+  className="w-14 h-14 mx-auto mb-6 object-contain"
+/>
           <span className="flex flex-col leading-none text-left">
             <span className="font-serif-display text-xl md:text-2xl" style={{ color: "#F8F5EF" }}>Kaarya</span>
             <span className="text-[0.55rem] tracking-[0.3em] uppercase" style={{ color: "#C9A46B" }}>Dream · Design · Deliver</span>

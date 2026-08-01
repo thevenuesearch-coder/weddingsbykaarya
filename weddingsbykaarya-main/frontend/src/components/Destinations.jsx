@@ -1,10 +1,11 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import { MapPin, CalendarDays, Sparkles, Landmark, ArrowRight } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { LotusDivider } from "./Motifs";
 import { DESTINATIONS } from "../lib/data";
 import { scrollToId } from "../hooks/useLenis";
+import { useNavigate } from "react-router-dom";
 
 const NamesMarquee = () => {
   const line = (
@@ -25,6 +26,14 @@ const NamesMarquee = () => {
 };
 
 function DestinationPanel({ d, index }) {
+  const navigate = useNavigate();
+
+  const [hovered, setHovered] = useState(false);
+
+  const [cursor, setCursor] = useState({
+    x: 0,
+    y: 0,
+  });
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const yImg = useTransform(scrollYProgress, [0, 1], ["-16%", "16%"]);
@@ -38,11 +47,21 @@ function DestinationPanel({ d, index }) {
   const rY = useSpring(useTransform(mx, [-0.5, 0.5], [-10, 10]), { stiffness: 150, damping: 18 });
 
   const onMove = (e) => {
-    const r = e.currentTarget.getBoundingClientRect();
-    mx.set((e.clientX - r.left) / r.width - 0.5);
-    my.set((e.clientY - r.top) / r.height - 0.5);
+    const rect = e.currentTarget.getBoundingClientRect();
+
+    mx.set((e.clientX - rect.left) / rect.width - 0.5);
+    my.set((e.clientY - rect.top) / rect.height - 0.5);
+
+    setCursor({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
   };
-  const onLeave = () => { mx.set(0); my.set(0); };
+  const onLeave = () => {
+    mx.set(0);
+    my.set(0);
+    setHovered(false);
+  };
 
   const left = index % 2 === 0;
   const chips = [
@@ -55,30 +74,88 @@ function DestinationPanel({ d, index }) {
     <div ref={ref} data-testid={`destination-${index}`} className="relative py-16 md:py-24">
       <div className={`mx-auto max-w-[1400px] px-6 md:px-10 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center ${left ? "" : "lg:[direction:rtl]"}`}>
         {/* Image with 3D tilt + parallax */}
-        <div className="lg:col-span-7 [direction:ltr]" style={{ perspective: 1200 }} data-cursor-label="Explore">
-          <motion.div
-            onMouseMove={onMove}
-            onMouseLeave={onLeave}
-            style={{ rotateX: rX, rotateY: rY, transformStyle: "preserve-3d" }}
-            className="relative overflow-hidden"
-          >
-            <div className="relative overflow-hidden" style={{ border: "1px solid rgba(201,164,107,0.3)" }}>
-              <motion.img
-                style={{ y: yImg, scale: scaleImg }}
-                src={d.img}
-                alt={`${d.name}, ${d.country} — luxury destination wedding`}
-                loading="lazy"
-                className="w-full h-[420px] md:h-[560px] object-cover"
-              />
-              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(78,30,39,0.7), transparent 55%)" }} />
-              {/* Floating tag chip (3D lift) */}
-              <div style={{ transform: "translateZ(40px)" }} className="absolute bottom-5 left-5 px-4 py-2" data-testid={`destination-tag-${index}`}>
-                <span className="text-[0.7rem] tracking-[0.3em] uppercase" style={{ color: "#C9A46B" }}>{d.tag}</span>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+        <div
+          className="lg:col-span-7 [direction:ltr]"
+          style={{ perspective: 1200 }}
+          data-cursor-label="Explore"
+        >
+        <Link
+          to={`/destination/${d.slug}`}
+          className="block cursor-pointer"
+        >
+        <motion.div
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={onLeave}
+          onMouseMove={onMove}
+          onClick={() => navigate(`/destination/${d.slug}`)}
+          style={{
+            rotateX: rX,
+            rotateY: rY,
+            transformStyle: "preserve-3d",
+          }}
+          className="relative overflow-hidden cursor-none"
+        >
+        <div
+          className="relative overflow-hidden"
+           style={{ border: "1px solid rgba(201,164,107,0.3)" }}
+        >
+        <motion.img
+          style={{
+            y: yImg,
+            scale: scaleImg,
+          }}
+          src={d.img}
+          alt={`${d.name}, ${d.country} — luxury destination wedding`}
+          loading="lazy"
+          className="w-full h-[420px] md:h-[560px] object-cover transition-transform duration-500 hover:scale-105"
+        />
 
+        <div
+  className="absolute inset-0"
+  style={{
+    background:
+      "linear-gradient(to top, rgba(78,30,39,0.75), rgba(78,30,39,0.15) 45%, transparent 70%)",
+  }}
+/>
+
+<motion.div
+  animate={{
+    opacity: hovered ? 1 : 0,
+    scale: hovered ? 1 : 0.4,
+    x: cursor.x - 45,
+    y: cursor.y - 45,
+  }}
+  transition={{
+    type: "spring",
+    stiffness: 350,
+    damping: 28,
+  }}
+  className="absolute z-30 w-[90px] h-[90px] rounded-full border border-[#C9A46B] bg-[#4E1E27]/70 backdrop-blur-md flex items-center justify-center pointer-events-none"
+>
+  <span
+    className="text-[11px] uppercase tracking-[0.35em]"
+    style={{ color: "#F8F5EF" }}
+  >
+    VIEW
+  </span>
+</motion.div>
+
+        <div
+          style={{ transform: "translateZ(40px)" }}
+          className="absolute bottom-5 left-5 px-4 py-2"
+          data-testid={`destination-tag-${index}`}
+        >
+          <span
+            className="text-[0.7rem] tracking-[0.3em] uppercase"
+            style={{ color: "#C9A46B" }}
+          >
+            {d.tag}
+          </span>
+        </div>
+      </div>
+    </motion.div>
+  </Link>
+</div>
         {/* Text */}
         <div className="lg:col-span-5 [direction:ltr] relative" data-cursor="dash">
           <motion.span style={{ y: yNum }} className="absolute -top-24 right-0 font-serif-display leading-none pointer-events-none select-none text-outline-gold text-[9rem] md:text-[13rem] opacity-40">
@@ -99,18 +176,42 @@ function DestinationPanel({ d, index }) {
                 </div>
               ))}
             </div>
-            <button
-              data-testid={`destination-enquire-${index}`}
-              onClick={() => {
-                window.dispatchEvent(new CustomEvent("kaarya:enquire", { detail: { location: `${d.name}, ${d.country}` } }));
-                scrollToId("contact");
-              }}
-              className="mt-8 inline-flex items-center gap-3 px-7 py-3.5 text-xs tracking-[0.22em] uppercase transition-all duration-500 hover:tracking-[0.3em] group/btn"
-              style={{ border: "1px solid #C9A46B", color: "#C9A46B" }}
-            >
-              Enquire about {d.name}
-              <ArrowRight size={15} className="transition-transform duration-500 group-hover/btn:translate-x-1" />
-            </button>
+            <div className="mt-8 flex flex-wrap gap-4">
+
+  <Link
+    to={`/destination/${d.slug}`}
+    className="inline-flex items-center gap-3 px-7 py-3.5 text-xs tracking-[0.22em] uppercase transition-all duration-500 hover:tracking-[0.3em]"
+    style={{
+      border: "1px solid #C9A46B",
+      color: "#C9A46B",
+    }}
+  >
+    View Destination
+    <ArrowRight size={15} />
+  </Link>
+
+  <button
+    onClick={() => {
+      window.dispatchEvent(
+        new CustomEvent("kaarya:enquire", {
+          detail: {
+            location: `${d.name}, ${d.country}`,
+          },
+        })
+      );
+
+      scrollToId("contact");
+    }}
+    className="inline-flex items-center gap-3 px-7 py-3.5 text-xs tracking-[0.22em] uppercase transition-all duration-500 hover:tracking-[0.3em]"
+    style={{
+      border: "1px solid #C9A46B",
+      color: "#C9A46B",
+    }}
+  >
+    Enquire
+  </button>
+
+</div>
           </Reveal>
         </div>
       </div>
