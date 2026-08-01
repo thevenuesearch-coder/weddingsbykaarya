@@ -8,6 +8,12 @@ import { toast } from "sonner";
 import { Reveal } from "./Reveal";
 import { LotusDivider, Elephant } from "./Motifs";
 import { CONTACT } from "../lib/data";
+import {
+  Instagram,
+  Linkedin,
+  Twitter,
+  Youtube,
+} from "lucide-react";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
@@ -162,9 +168,65 @@ export default function Contact() {
                   </a>
                 ))}
               </div>
-              <div className="mt-10 pt-8" style={{ borderTop: "1px solid rgba(201,164,107,0.2)" }}>
-                <p className="font-serif-display italic text-lg" style={{ color: "#E8DAC8" }}>Dream. Design. Deliver.</p>
-              </div>
+              <div
+  className="mt-10 pt-8 flex items-center justify-between"
+  style={{
+    borderTop: "1px solid rgba(201,164,107,0.2)",
+  }}
+>
+  {/* Tagline */}
+  <p
+    className="font-serif-display italic text-lg"
+    style={{
+      color: "#E8DAC8",
+    }}
+  >
+    Dream. Design. Deliver.
+  </p>
+
+  {/* Social Icons */}
+  <div className="flex items-center gap-4">
+    <a
+      href="https://instagram.com/weddingsbykaarya"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="transition-all duration-300 hover:scale-110 hover:text-[#C9A46B]"
+      style={{ color: "#E8DAC8" }}
+    >
+      <Instagram size={20} />
+    </a>
+
+    <a
+      href="https://www.linkedin.com/company/weddingsbykaarya"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="transition-all duration-300 hover:scale-110 hover:text-[#C9A46B]"
+      style={{ color: "#E8DAC8" }}
+    >
+      <Linkedin size={20} />
+    </a>
+
+    <a
+      href="https://x.com/weddingsbykaarya"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="transition-all duration-300 hover:scale-110 hover:text-[#C9A46B]"
+      style={{ color: "#E8DAC8" }}
+    >
+      <Twitter size={20} />
+    </a>
+
+    <a
+      href="https://youtube.com/@weddingsbykaarya"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="transition-all duration-300 hover:scale-110 hover:text-[#C9A46B]"
+      style={{ color: "#E8DAC8" }}
+    >
+      <Youtube size={20} />
+    </a>
+  </div>
+</div>
             </div>
           </Reveal>
         </div>
