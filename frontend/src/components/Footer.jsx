@@ -19,13 +19,14 @@ export default function Footer() {
 
   return (
     <footer
-      data-testid="site-footer"
-      className="relative pt-12 pb-10 px-6 md:px-10"
-      style={{
-        backgroundColor: "#5B2230",
-        borderTop: "1px solid rgba(201,164,107,0.18)",
-      }}
-    >
+  data-testid="site-footer"
+  className="sticky bottom-0 z-30 pt-4 pb-4 px-4 md:px-5"
+  style={{
+    backgroundColor: "rgba(91,34,48,0.98)",
+    backdropFilter: "blur(18px)",
+    borderTop: "1px solid rgba(201,164,107,.18)",
+  }}
+>
       <div className="mx-auto max-w-[1400px]">
 
         {/* CTA Section */}
