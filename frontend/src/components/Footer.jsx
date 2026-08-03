@@ -101,7 +101,7 @@ export default function Footer() {
                 "_blank"
               )
             }
-            className="px-10 py-4 uppercase tracking-[0.32em] text-xs transition-all duration-500 hover:tracking-[0.4em]"
+            className="px-4 py-3 uppercase tracking-[0.32em] text-xs transition-all duration-500 hover:tracking-[0.4em]"
             style={{
               border: "1px solid #C9A46B",
               color: "#C9A46B",

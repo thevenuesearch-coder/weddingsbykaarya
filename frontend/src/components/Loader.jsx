@@ -48,7 +48,7 @@ export default function Loader({ onDone }) {
             style={{ backgroundColor: "#C9A46B" }}
             initial={{ width: 0, opacity: 0.6 }}
             animate={{ width: 180, opacity: 1 }}
-            transition={{ delay: 0.4, duration: 2 }}
+            transition={{ delay: 0.4, duration: 1 }}
           />
         </motion.div>
       )}

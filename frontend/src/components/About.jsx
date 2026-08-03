@@ -26,7 +26,7 @@ export default function About() {
         </Reveal>
         <Reveal delay={0.1} className="text-center">
           <h2 className="font-serif-display font-light text-4xl md:text-6xl leading-tight" style={{ color: "#F8F5EF" }}>
-            Where Dreams Become Timeless Celebrations
+            A house built on a single promise
           </h2>
         </Reveal>
         <LotusDivider className="my-10" />
