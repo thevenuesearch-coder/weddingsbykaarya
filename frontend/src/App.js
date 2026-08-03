@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import "@/App.css";
 import { Toaster } from "sonner";
 
@@ -23,7 +24,7 @@ import Footer from "@/components/Footer";
 
 import DestinationDetails from "@/pages/DestinationDetails";
 
-function HomePage() {
+function HomePage({ showFooter }) {
   return (
     <>
       <Hero />
@@ -36,14 +37,35 @@ function HomePage() {
       <Destinations />
       <FAQ />
       <Contact />
-      <Footer />
+      <AnimatePresence>
+        {showFooter && <Footer />}
+      </AnimatePresence>
     </>
   );
 }
 
 function App() {
+  const [showFooter, setShowFooter] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
+  useEffect(() => {
+  const handleScroll = () => {
+    const hero = document.getElementById("hero");
+
+    if (!hero) return;
+
+    const heroBottom = hero.offsetTop + hero.offsetHeight;
+
+    setShowFooter(window.scrollY > heroBottom + 180);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  handleScroll();
+
+  return () => window.removeEventListener("scroll", handleScroll);
+  }, 
+  []);
   useLenis();
 
   return (
@@ -75,7 +97,10 @@ function App() {
       >
         <Routes>
           {/* Home Page */}
-          <Route path="/" element={<HomePage />} />
+          <Route
+  path="/"
+  element={<HomePage showFooter={showFooter} />}
+/>
 
           {/* Destination Details Page */}
           <Route

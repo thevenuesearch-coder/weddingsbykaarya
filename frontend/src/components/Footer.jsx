@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useNavigate, useLocation } from "react-router-dom";
 import { scrollToId } from "../hooks/useLenis";
 
@@ -18,19 +19,35 @@ export default function Footer() {
   };
 
   return (
-    <footer
-      data-testid="site-footer"
-      className="sticky bottom-0 z-30 pt-4 pb-4 px-4 md:px-5"
-      style={{
-        backgroundColor: "rgba(91,34,48,0.98)",
-        backdropFilter: "blur(18px)",
-        borderTop: "1px solid rgba(201,164,107,.18)",
-      }}
-    >
+    <motion.footer
+  initial={{
+    opacity: 0,
+    y: 100,
+  }}
+  animate={{
+    opacity: 1,
+    y: 0,
+  }}
+  exit={{
+    opacity: 0,
+    y: 100,
+  }}
+  transition={{
+    duration: 0.9,
+    ease: [0.22, 1, 0.36, 1],
+  }}
+  data-testid="site-footer"
+  className="fixed bottom-0 left-0 right-0 z-30 py-2 px-4 md:px-5"
+  style={{
+    backgroundColor: "rgba(91,34,48,0.98)",
+    backdropFilter: "blur(18px)",
+    borderTop: "1px solid rgba(201,164,107,.18)",
+  }}
+>
       <div className="mx-auto max-w-[1400px]">
 
         {/* CTA Section */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
 
           {/* Left Side */}
           <div className="flex items-center gap-4">
@@ -97,6 +114,6 @@ export default function Footer() {
         
 
       </div>
-    </footer>
+    </motion.footer>
   );
 }

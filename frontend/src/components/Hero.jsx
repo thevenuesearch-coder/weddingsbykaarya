@@ -5,6 +5,7 @@ import { MaskedLines } from "./Reveal";
 import { Mandala, Diya, Elephant } from "./Motifs";
 import { scrollToId } from "../hooks/useLenis";
 
+
 const Petals = () => {
   const petals = useMemo(
     () =>
