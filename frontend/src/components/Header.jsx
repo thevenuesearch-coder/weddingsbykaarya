@@ -16,7 +16,9 @@ export default function Header() {
   const isHome = location.pathname === "/";
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
+    const onScroll = () => {
+  setScrolled(window.scrollY > 180);
+};
 
     window.addEventListener("scroll", onScroll, { passive: true });
 
@@ -53,22 +55,45 @@ export default function Header() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{
-        delay: 0.2,
-        duration: 0.9,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-      className="fixed top-0 inset-x-0 z-50 transition-colors duration-500"
-      style={{
-        backgroundColor: scrolled
-          ? "rgba(78,30,39,0.96)"
-          : "rgba(78,30,39,0.35)",
-        borderBottom: scrolled
-          ? "1px solid rgba(201,164,107,0.25)"
-          : "1px solid transparent",
-      }}
-    >
-      <div className="mx-auto max-w-[1400px] px-6 md:px-10 flex items-center justify-between h-20">
+  duration: 1.8,
+  ease: [0.22, 1, 0.36, 1],
+}}
+      className={`fixed left-0 right-0 z-50 flex justify-center transition-all duration-[1600ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
+  scrolled ? "top-5 px-6" : "top-0 px-0"
+}`}
+>
+  <motion.div
+  animate={{
+  width: scrolled ? "92%" : "100%",
+  maxWidth: scrolled ? "1380px" : "100%",
+  y: scrolled ? 8 : 0,
+  borderRadius: scrolled ? 999 : 0,
+  height: window.innerWidth < 768
+    ? (scrolled ? 56 : 64)
+    : (scrolled ? 64 : 80),
+}}
+  transition={{
+    duration: 0.9,
+    ease: [0.22, 1, 0.36, 1],
+  }}
+  className="flex items-center justify-between px-4 md:px-8"
+  style={{
+    background: scrolled
+  ? "rgba(255,255,255,0.06)"
+  : "rgba(255,255,255,0)",
 
+    backdropFilter: scrolled ? "blur(28px)" : "blur(0px)",
+    WebkitBackdropFilter: scrolled ? "blur(28px)" : "blur(0px)",
+
+    border: scrolled
+      ? "1px solid rgba(255,255,255,0.16)"
+      : "1px solid transparent",
+
+    boxShadow: scrolled
+      ? "0 12px 40px rgba(0,0,0,.25)"
+      : "0 0 0 rgba(0,0,0,0)",
+  }}
+>
         {/* Logo */}
         <button
           data-testid="logo-home"
@@ -78,13 +103,13 @@ export default function Header() {
           <img
             src="/logo.png"
             alt="Kaarya Logo"
-            className="w-10 h-10 object-contain transition-transform duration-500 group-hover:scale-110"
+            className="w-12 h-12 md:w-14 md:h-14 object-contain transition-transform duration-500 group-hover:scale-110"
           />
 
           <img
   src="/kaarya1.png"   // Change to logo.png if that's the one you prefer
   alt="Kaarya"
-  className="h-16 md:h-40 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+  className="h-14 md:h-23 lg:h-28 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
 />
         </button>
 
@@ -144,26 +169,31 @@ export default function Header() {
           {open ? <X size={26} /> : <Menu size={26} />}
         </button>
 
-      </div>
+      </motion.div>
 
       {open && (
-        <motion.div
-          initial={{ height: 0, opacity: 0 }}
-          animate={{ height: "auto", opacity: 1 }}
-          className="md:hidden overflow-hidden"
-          style={{
-            backgroundColor: "rgba(78,30,39,0.98)",
-            borderTop: "1px solid rgba(201,164,107,0.2)",
-          }}
-        >
-          <div className="px-6 py-6 flex flex-col gap-5">
+  <motion.div
+    initial={{ opacity: 0, y: -15 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -15 }}
+    transition={{ duration: 0.35 }}
+    className="absolute top-[64px] left-3 right-3 md:hidden rounded-3xl overflow-hidden"
+    style={{
+      background: "rgba(78,30,39,0.96)",
+      backdropFilter: "blur(25px)",
+      WebkitBackdropFilter: "blur(25px)",
+      border: "1px solid rgba(255,255,255,0.12)",
+      boxShadow: "0 18px 50px rgba(0,0,0,.35)",
+    }}
+  >
+          <div className="px-8 py-8 flex flex-col gap-7">
 
             {NAV.map((n) => (
               <button
                 key={n.id}
                 data-testid={`mobile-nav-${n.id}`}
                 onClick={() => go(n.id)}
-                className="text-left text-lg font-serif-display"
+                className="text-left text-base font-serif-display"
                 style={{ color: "#F8F5EF" }}
               >
                 {n.label}
@@ -173,7 +203,7 @@ export default function Header() {
             {isHome ? (
               <button
                 onClick={() => go("contact")}
-                className="mt-2 px-6 py-3 text-xs tracking-[0.2em] uppercase self-start"
+                className="mt-4 w-full py-3 text-xs tracking-[0.2em] uppercase self-start"
                 style={{
                   border: "1px solid #C9A46B",
                   color: "#C9A46B",
@@ -184,7 +214,7 @@ export default function Header() {
             ) : (
               <button
                 onClick={() => navigate("/")}
-                className="mt-2 px-6 py-3 text-xs tracking-[0.2em] uppercase self-start"
+                className="mt-4 w-full py-3 text-xs tracking-[0.2em] uppercase self-start"
                 style={{
                   border: "1px solid #C9A46B",
                   color: "#C9A46B",

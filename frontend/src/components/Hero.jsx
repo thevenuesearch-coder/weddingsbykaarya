@@ -84,7 +84,7 @@ export default function Hero() {
           India&apos;s Finest Destination Wedding Company
         </motion.p>
 
-        <h1 className="font-serif-display font-light leading-[0.95] text-5xl md:text-7xl lg:text-[5.5rem]" style={{ color: "#F8F5EF" }}>
+        <h1 className="font-serif-display font-light leading-[1.05] text-[clamp(2.6rem,10vw,5.5rem)]" style={{ color: "#F8F5EF" }}>
           <MaskedLines
             lines={["Where Dreams Become", "Timeless Celebrations"]}
             delay={0.6}
@@ -95,7 +95,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.4, duration: 1.1 }}
-          className="mt-8 max-w-2xl text-sm md:text-base leading-relaxed font-light"
+          className="mt-6 max-w-md md:max-w-2xl text-[15px] md:text-base leading-8 font-light px-3"
           style={{ color: "#E8DAC8" }}
         >
           At Weddings by Kaarya, we transform your vision into an extraordinary celebration with bespoke
@@ -121,12 +121,12 @@ export default function Hero() {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.9, duration: 1 }}
-          className="mt-10 flex flex-col sm:flex-row items-center gap-4"
+          className="mt-8 flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto px-6"
         >
           <button
             data-testid="hero-cta-primary"
             onClick={() => scrollToId("contact")}
-            className="px-9 py-4 text-xs tracking-[0.22em] uppercase transition-all duration-500 hover:tracking-[0.3em]"
+            className="w-full sm:w-auto px-8 py-4 text-xs tracking-[0.22em] uppercase transition-all duration-500 hover:tracking-[0.3em]"
             style={{ backgroundColor: "#C9A46B", color: "#4E1E27" }}
           >
             Begin Your Wedding Journey
@@ -134,7 +134,7 @@ export default function Hero() {
           <button
             data-testid="hero-cta-secondary"
             onClick={() => scrollToId("destinations")}
-            className="px-9 py-4 text-xs tracking-[0.22em] uppercase transition-all duration-500 hover:bg-[#C9A46B]/10"
+            className="w-full sm:w-auto px-8 py-4 text-xs tracking-[0.22em] uppercase transition-all duration-500 hover:bg-[#C9A46B]/10"
             style={{ border: "1px solid #C9A46B", color: "#C9A46B" }}
           >
             Discover Our Destinations
