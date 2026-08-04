@@ -58,42 +58,72 @@ export default function Header() {
   duration: 1.8,
   ease: [0.22, 1, 0.36, 1],
 }}
-      className={`fixed left-0 right-0 z-50 flex justify-center transition-all duration-[1600ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
-  scrolled ? "top-5 px-6" : "top-0 px-0"
-}`}
+      className="fixed left-0 right-0 top-5 z-50 flex justify-center px-6"
 >
   <motion.div
-  animate={{
-  width: scrolled ? "92%" : "100%",
-  maxWidth: scrolled ? "1380px" : "100%",
-  y: scrolled ? 8 : 0,
-  borderRadius: scrolled ? 999 : 0,
-  height: window.innerWidth < 768
-    ? (scrolled ? 56 : 64)
-    : (scrolled ? 64 : 80),
+
+ animate={{
+  width: "92%",
+  maxWidth: "1380px",
+  y: 8,
+  borderRadius: 999,
+  height: window.innerWidth < 768 ? 56 : 64,
 }}
   transition={{
     duration: 0.9,
     ease: [0.22, 1, 0.36, 1],
   }}
-  className="flex items-center justify-between px-4 md:px-8"
+  className="relative flex items-center justify-between px-4 md:px-8 overflow-hidden"
   style={{
-    background: scrolled
-  ? "rgba(255,255,255,0.06)"
-  : "rgba(255,255,255,0)",
+  position: "relative",
 
-    backdropFilter: scrolled ? "blur(28px)" : "blur(0px)",
-    WebkitBackdropFilter: scrolled ? "blur(28px)" : "blur(0px)",
+  background: `
+linear-gradient(
+135deg,
+rgba(255,255,255,.16),
+rgba(255,255,255,.05)
+)
+`,
 
-    border: scrolled
-      ? "1px solid rgba(255,255,255,0.16)"
-      : "1px solid transparent",
+  backdropFilter: "blur(38px) saturate(180%)",
 
-    boxShadow: scrolled
-      ? "0 12px 40px rgba(0,0,0,.25)"
-      : "0 0 0 rgba(0,0,0,0)",
-  }}
+  WebkitBackdropFilter: "blur(38px) saturate(180%)",
+
+  border: "1px solid rgba(255,255,255,.15)",
+
+  boxShadow: `
+inset 0 1px rgba(255,255,255,.18),
+0 18px 60px rgba(0,0,0,.22)
+`,
+
+  overflow: "hidden",
+}}
 >
+  <div
+  className="absolute inset-0 rounded-full pointer-events-none"
+  style={{
+    background:
+      "linear-gradient(to bottom, rgba(255,255,255,.18), rgba(255,255,255,0))",
+    opacity: .8,
+  }}
+/>
+<motion.div
+    animate={{
+      x: ["-120%", "120%"],
+    }}
+    transition={{
+      repeat: Infinity,
+      duration: 7,
+      ease: "linear",
+    }}
+    className="absolute top-0 bottom-0 w-40 pointer-events-none"
+    style={{
+      background:
+        "linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent)",
+      filter: "blur(14px)",
+      transform: "skewX(-20deg)",
+    }}
+  />
         {/* Logo */}
         <button
           data-testid="logo-home"
@@ -178,13 +208,25 @@ export default function Header() {
     exit={{ opacity: 0, y: -15 }}
     transition={{ duration: 0.35 }}
     className="absolute top-[64px] left-3 right-3 md:hidden rounded-3xl overflow-hidden"
-    style={{
-      background: "rgba(78,30,39,0.96)",
-      backdropFilter: "blur(25px)",
-      WebkitBackdropFilter: "blur(25px)",
-      border: "1px solid rgba(255,255,255,0.12)",
-      boxShadow: "0 18px 50px rgba(0,0,0,.35)",
-    }}
+   style={{
+  background: `
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.12),
+      rgba(255,255,255,.05)
+    )
+  `,
+
+  backdropFilter: "blur(38px) saturate(190%)",
+  WebkitBackdropFilter: "blur(38px) saturate(190%)",
+
+  border: "1px solid rgba(255,255,255,.18)",
+
+  boxShadow: `
+      inset 0 1px rgba(255,255,255,.18),
+      0 18px 60px rgba(0,0,0,.28)
+  `,
+}}
   >
           <div className="px-8 py-8 flex flex-col gap-7">
 

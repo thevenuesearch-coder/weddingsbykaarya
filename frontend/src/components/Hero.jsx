@@ -1,8 +1,7 @@
 import { useRef, useMemo } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { IMAGES } from "../lib/data";
 import { MaskedLines } from "./Reveal";
-import { Mandala, Diya, Elephant } from "./Motifs";
+import { Mandala, Diya } from "./Motifs";
 import { scrollToId } from "../hooks/useLenis";
 
 
@@ -48,15 +47,45 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <section id="hero" ref={ref} data-testid="hero-section" data-cursor-shimmer className="relative h-screen w-full overflow-hidden">
-      {/* Background image with parallax + slow zoom */}
-      <motion.div className="absolute inset-0" style={{ y: yBg, scale: scaleBg }}>
-        <img src={IMAGES.heroPalace} alt="Royal Indian wedding at a palace" className="h-full w-full object-cover" />
-      </motion.div>
+    <section id="hero" ref={ref} data-testid="hero-section" data-cursor-shimmer className="relative min-h-screen pb-36 overflow-hidden">
+      {/* Background Video with parallax + slow zoom */}
+<motion.div
+  className="absolute inset-0 overflow-hidden"
+  style={{
+    y: yBg,
+    scale: scaleBg,
+  }}
+>
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="metadata"
+    className="w-full h-full object-cover"
+  >
+    <source
+      src="/video/hero.mp4"
+      type="video/mp4"
+    />
+  </video>
+</motion.div>
 
       {/* Maroon scrims (no gradient stacks that muddy — solid tints) */}
-      <div className="absolute inset-0" style={{ backgroundColor: "rgba(78,30,39,0.62)" }} />
-      <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(78,30,39,0.85), rgba(78,30,39,0.35) 45%, rgba(78,30,39,0.92))" }} />
+     <div
+  className="absolute inset-0"
+  style={{
+    backgroundColor: "rgba(35,15,20,.45)",
+  }}
+/>
+
+<div
+  className="absolute inset-0"
+  style={{
+    background:
+      "linear-gradient(180deg, rgba(35,15,20,.72) 0%, rgba(35,15,20,.25) 45%, rgba(35,15,20,.78) 100%)",
+  }}
+/>
 
       {/* Rotating mandala */}
       <Mandala className="absolute -right-28 -top-28 w-[420px] h-[420px] md:w-[620px] md:h-[620px] animate-spin-slow opacity-[0.18] z-10" />
@@ -159,6 +188,90 @@ export default function Hero() {
         <span className="text-[0.6rem] tracking-[0.3em] uppercase rotate-90 origin-center mb-6" style={{ color: "#E8DAC8" }}>Scroll</span>
         <motion.span animate={{ height: [10, 26, 10] }} transition={{ duration: 2, repeat: Infinity }} className="w-px" style={{ backgroundColor: "#C9A46B" }} />
       </motion.div>
+{/* ================= Trusted Partners ================= */}
+
+<div className="absolute bottom-0 left-0 w-full z-30">
+
+  <div
+    className="overflow-hidden py-5"
+    style={{
+      backdropFilter: "blur(18px)",
+      WebkitBackdropFilter: "blur(18px)",
+      background:
+        "linear-gradient(180deg, rgba(78,30,39,.18), rgba(78,30,39,.58))",
+      borderTop: "1px solid rgba(201,164,107,.18)",
+    }}
+  >
+
+    <p
+      className="text-center uppercase tracking-[0.45em] text-xs mb-5"
+      style={{ color: "#C9A46B" }}
+    >
+      Trusted By
+    </p>
+
+    <motion.div
+      className="flex w-max items-center"
+      animate={{
+        x: ["0%", "-50%"],
+      }}
+      transition={{
+        duration: 35,
+        ease: "linear",
+        repeat: Infinity,
+      }}
+    >
+
+      {[
+        "/partners/itc.png",
+        "/partners/marriott.png",
+        "/partners/novotel.png",
+        "/partners/parkhyatt.png",
+        "/partners/radisson.png",
+        "/partners/sheraton.png",
+        "/partners/taj.png",
+        "/partners/westin.png",
+
+        "/partners/itc.png",
+        "/partners/marriott.png",
+        "/partners/novotel.png",
+        "/partners/parkhyatt.png",
+        "/partners/radisson.png",
+        "/partners/sheraton.png",
+        "/partners/taj.png",
+        "/partners/westin.png",
+      ].map((logo, index) => (
+
+        <div
+          key={index}
+          className="mx-14 flex-shrink-0"
+        >
+          <img
+            src={logo}
+            alt="Partner Logo"
+            className="
+h-12
+w-auto
+object-contain
+opacity-80
+hover:opacity-100
+hover:scale-110
+transition-all
+duration-500
+brightness-0
+invert
+"
+          />
+        </div>
+
+      ))}
+
+    </motion.div>
+
+  </div>
+
+</div>
+
     </section>
   );
 }

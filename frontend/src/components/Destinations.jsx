@@ -59,7 +59,18 @@ function DestinationPanel({ d, index }) {
         {/* Image with 3D tilt + parallax */}
         <div className="lg:col-span-7 [direction:ltr]" style={{ perspective: 1200 }} data-cursor-label="VIEW">
           <motion.div
-            onClick={() => navigate(`/destination/${d.slug}`)}
+            onClick={() => {
+  if (window.__lenis) {
+    window.__lenis.scrollTo(0, {
+      immediate: true,
+      force: true,
+    });
+  }
+
+  window.scrollTo(0, 0);
+
+  navigate(`/destination/${d.slug}`);
+}}
           >
             <div className="relative overflow-hidden cursor-pointer" style={{ border: "1px solid rgba(201,164,107,0.3)" }}>
               <motion.img

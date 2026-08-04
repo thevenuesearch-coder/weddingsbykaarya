@@ -86,6 +86,37 @@ export const DESTINATIONS = [
     vibe: "Regal & Romantic",
     venue: "Lake palaces & marble courtyards",
     insight: "Exchange vows on a palace island as the Aravalli hills turn amber — India's most cinematic royal backdrop.",
+
+    venues: [
+    {
+      name: "Taj Lake Palace",
+      image: "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg",
+      location: "Lake Pichola",
+      capacity: "250 Guests",
+      type: "Luxury Heritage Palace",
+      description:
+        "An iconic floating palace offering breathtaking lake views and royal wedding experiences."
+    },
+    {
+      name: "The Oberoi Udaivilas",
+      image: "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg",
+      location: "Udaipur",
+      capacity: "350 Guests",
+      type: "Luxury Resort",
+      description:
+        "World-renowned luxury resort with grand courtyards and magnificent architecture."
+    },
+    {
+      name: "City Palace",
+      image: "https://images.pexels.com/photos/1619317/pexels-photo-1619317.jpeg",
+      location: "Udaipur",
+      capacity: "500 Guests",
+      type: "Royal Palace",
+      description:
+        "Historic palace complex ideal for extravagant destination weddings."
+    }
+  ]
+
   },
   {
     name: "Jaipur",
@@ -97,6 +128,58 @@ export const DESTINATIONS = [
     vibe: "Majestic & Opulent",
     venue: "Forts, havelis & heritage hotels",
     insight: "Baraats through fort gateways, elephants in ceremonial finery, and courtyards dressed in gold and rose.",
+
+    venues: [
+  {
+    name: "Rambagh Palace",
+    image: "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg",
+    location: "Jaipur",
+    capacity: "350 Guests",
+    type: "Luxury Palace Hotel",
+    description: "Former royal residence transformed into one of India's most luxurious wedding venues."
+  },
+  {
+    name: "Fairmont Jaipur",
+    image: "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg",
+    location: "Jaipur",
+    capacity: "800 Guests",
+    type: "Luxury Resort",
+    description: "Grand Mughal-inspired architecture with magnificent ballrooms and gardens."
+  },
+  {
+    name: "Samode Palace",
+    image: "https://images.pexels.com/photos/1619317/pexels-photo-1619317.jpeg",
+    location: "Jaipur",
+    capacity: "250 Guests",
+    type: "Heritage Palace",
+    description: "Historic palace surrounded by the Aravalli Hills for intimate royal celebrations."
+  },
+  {
+    name: "Jai Mahal Palace",
+    image: "https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg",
+    location: "Jaipur",
+    capacity: "500 Guests",
+    type: "Luxury Heritage Hotel",
+    description: "Beautiful Mughal gardens and timeless architecture perfect for destination weddings."
+  },
+  {
+    name: "Raj Palace",
+    image: "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg",
+    location: "Jaipur",
+    capacity: "300 Guests",
+    type: "Royal Palace",
+    description: "One of Jaipur's oldest palaces offering regal wedding experiences."
+  },
+  {
+    name: "Le Meridien Jaipur",
+    image: "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg",
+    location: "Jaipur",
+    capacity: "700 Guests",
+    type: "Luxury Hotel",
+    description: "Elegant architecture with expansive lawns and luxurious banquet spaces."
+  }
+]
+
   },
   {
     name: "Goa",
@@ -108,6 +191,58 @@ export const DESTINATIONS = [
     vibe: "Breezy & Barefoot",
     venue: "Private beaches & clifftop villas",
     insight: "Sunset sangeets on the Arabian Sea, feni cocktails and toes-in-the-sand vows under a canopy of stars.",
+
+    venues: [
+  {
+    name: "Taj Exotica Resort",
+    image: "https://images.pexels.com/photos/261395/pexels-photo-261395.jpeg",
+    location: "South Goa",
+    capacity: "450 Guests",
+    type: "Beach Resort",
+    description: "Luxury beachfront resort featuring Portuguese-inspired architecture."
+  },
+  {
+    name: "The Leela Goa",
+    image: "https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg",
+    location: "Cavelossim",
+    capacity: "500 Guests",
+    type: "Luxury Beach Resort",
+    description: "Private lagoons, lush gardens and pristine beaches create unforgettable weddings."
+  },
+  {
+    name: "Grand Hyatt Goa",
+    image: "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg",
+    location: "Bambolim",
+    capacity: "700 Guests",
+    type: "Luxury Hotel",
+    description: "Magnificent waterfront venue overlooking Bambolim Bay."
+  },
+  {
+    name: "W Goa",
+    image: "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg",
+    location: "Vagator",
+    capacity: "350 Guests",
+    type: "Luxury Lifestyle Resort",
+    description: "Modern luxury with dramatic cliffside ocean views."
+  },
+  {
+    name: "Planet Hollywood",
+    image: "https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg",
+    location: "Utorda",
+    capacity: "600 Guests",
+    type: "Beach Resort",
+    description: "Elegant beachfront destination with grand wedding lawns."
+  },
+  {
+    name: "Alila Diwa Goa",
+    image: "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg",
+    location: "Majorda",
+    capacity: "300 Guests",
+    type: "Luxury Resort",
+    description: "Contemporary luxury surrounded by lush paddy fields."
+  }
+]
+
   },
   {
     name: "Bali",
@@ -119,6 +254,58 @@ export const DESTINATIONS = [
     vibe: "Spiritual & Lush",
     venue: "Cliff resorts & jungle sanctuaries",
     insight: "Emerald rice terraces, water-temple blessings and infinity-edge mandaps above the Indian Ocean.",
+
+    venues: [
+  {
+    name: "Ayana Resort",
+    image: "https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg",
+    location: "Jimbaran",
+    capacity: "500 Guests",
+    type: "Luxury Cliff Resort",
+    description: "Spectacular clifftop wedding venue overlooking the Indian Ocean."
+  },
+  {
+    name: "The Apurva Kempinski",
+    image: "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg",
+    location: "Nusa Dua",
+    capacity: "800 Guests",
+    type: "Luxury Resort",
+    description: "Majestic Balinese architecture and oceanfront wedding settings."
+  },
+  {
+    name: "Alila Villas Uluwatu",
+    image: "https://images.pexels.com/photos/261395/pexels-photo-261395.jpeg",
+    location: "Uluwatu",
+    capacity: "200 Guests",
+    type: "Luxury Villas",
+    description: "Minimalist luxury perched dramatically above the ocean."
+  },
+  {
+    name: "Four Seasons Jimbaran",
+    image: "https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg",
+    location: "Jimbaran",
+    capacity: "300 Guests",
+    type: "Luxury Resort",
+    description: "Elegant villas surrounded by tropical gardens and ocean views."
+  },
+  {
+    name: "Bulgari Resort Bali",
+    image: "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg",
+    location: "Uluwatu",
+    capacity: "180 Guests",
+    type: "Luxury Resort",
+    description: "Ultra-luxury cliffside venue blending Italian elegance with Balinese culture."
+  },
+  {
+    name: "The Mulia Bali",
+    image: "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg",
+    location: "Nusa Dua",
+    capacity: "700 Guests",
+    type: "Luxury Beach Resort",
+    description: "Grand beachfront property offering lavish destination weddings."
+  }
+]
+
   },
   {
     name: "Phuket",
@@ -130,6 +317,58 @@ export const DESTINATIONS = [
     vibe: "Tropical & Grand",
     venue: "Beachfront estates & island villas",
     insight: "Longtail baraats across turquoise bays and lantern-lit receptions on private Andaman shores.",
+
+    venues: [
+  {
+    name: "Sri Panwa",
+    image: "https://images.pexels.com/photos/261395/pexels-photo-261395.jpeg",
+    location: "Cape Panwa",
+    capacity: "250 Guests",
+    type: "Luxury Villas",
+    description: "Oceanfront luxury villas with panoramic sunset views."
+  },
+  {
+    name: "Amanpuri",
+    image: "https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg",
+    location: "Surin Beach",
+    capacity: "180 Guests",
+    type: "Luxury Resort",
+    description: "Thailand's iconic ultra-luxury resort with private beachfront ceremonies."
+  },
+  {
+    name: "Rosewood Phuket",
+    image: "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg",
+    location: "Patong",
+    capacity: "220 Guests",
+    type: "Luxury Beach Resort",
+    description: "Contemporary beachfront luxury surrounded by tropical landscapes."
+  },
+  {
+    name: "Anantara Mai Khao",
+    image: "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg",
+    location: "Mai Khao",
+    capacity: "400 Guests",
+    type: "Luxury Resort",
+    description: "Elegant beachfront destination with spacious wedding venues."
+  },
+  {
+    name: "Trisara Phuket",
+    image: "https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg",
+    location: "Cherngtalay",
+    capacity: "150 Guests",
+    type: "Luxury Villas",
+    description: "Exclusive private villas overlooking the Andaman Sea."
+  },
+  {
+    name: "The Nai Harn",
+    image: "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg",
+    location: "Nai Harn Beach",
+    capacity: "300 Guests",
+    type: "Luxury Hotel",
+    description: "Romantic seaside venue with stunning ocean panoramas."
+  }
+]
+
   },
 
   {
@@ -142,6 +381,58 @@ export const DESTINATIONS = [
     vibe: "Breezy & Barefoot",
     venue: "Luxury cliff resorts",
     insight: "A paradise of pristine beaches and oceanfront luxury, perfect for an intimate destination wedding.",
+
+    venues: [
+  {
+    name: "Cape Weligama",
+    image: "https://images.pexels.com/photos/261395/pexels-photo-261395.jpeg",
+    location: "Weligama",
+    capacity: "250 Guests",
+    type: "Luxury Cliff Resort",
+    description: "Elegant clifftop resort with breathtaking Indian Ocean views."
+  },
+  {
+    name: "Shangri-La Hambantota",
+    image: "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg",
+    location: "Hambantota",
+    capacity: "700 Guests",
+    type: "Luxury Resort",
+    description: "Beachfront luxury surrounded by tropical gardens."
+  },
+  {
+    name: "Cinnamon Bentota",
+    image: "https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg",
+    location: "Bentota",
+    capacity: "400 Guests",
+    type: "Beach Resort",
+    description: "Modern luxury resort overlooking Bentota Beach."
+  },
+  {
+    name: "Jetwing Lighthouse",
+    image: "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg",
+    location: "Galle",
+    capacity: "280 Guests",
+    type: "Luxury Hotel",
+    description: "Architectural masterpiece with oceanfront wedding venues."
+  },
+  {
+    name: "Amangalla",
+    image: "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg",
+    location: "Galle Fort",
+    capacity: "180 Guests",
+    type: "Luxury Heritage Hotel",
+    description: "Historic colonial property inside UNESCO-listed Galle Fort."
+  },
+  {
+    name: "Anantara Peace Haven",
+    image: "https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg",
+    location: "Tangalle",
+    capacity: "300 Guests",
+    type: "Luxury Beach Resort",
+    description: "Exclusive beachfront venue with lush tropical surroundings."
+  }
+]
+
   },
 
   {
@@ -154,7 +445,59 @@ export const DESTINATIONS = [
     venue: "Luxury Mountain Resorts",
     insight:
       "Exchange vows amidst the majestic Himalayan peaks, where crisp mountain air, breathtaking landscapes, and luxurious resorts create an unforgettable destination wedding experience.",
-    img: "https://images.pexels.com/photos/5238635/pexels-photo-5238635.jpeg?_gl=1*vhb63t*_gcl_au*NjkyODQ0NjQuMTc4NDk3NDkyOQ..*_ga*MTg1MTY0OTY5Mi4xNzg0OTcyNjQy*_ga_8JE65Q40S6*czE3ODU0Nzc1OTkkbzUkZzEkdDE3ODU0Nzc2NTkkajYwJGwwJGgw"
+    img: "https://images.pexels.com/photos/5238635/pexels-photo-5238635.jpeg?_gl=1*vhb63t*_gcl_au*NjkyODQ0NjQuMTc4NDk3NDkyOQ..*_ga*MTg1MTY0OTY5Mi4xNzg0OTcyNjQy*_ga_8JE65Q40S6*czE3ODU0Nzc1OTkkbzUkZzEkdDE3ODU0Nzc2NTkkajYwJGwwJGgw",
+
+    venues: [
+  {
+    name: "Wildflower Hall",
+    image: "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg",
+    location: "Shimla",
+    capacity: "180 Guests",
+    type: "Luxury Mountain Resort",
+    description: "Nestled in the Himalayan cedar forests, Wildflower Hall offers breathtaking mountain views and timeless luxury for intimate destination weddings."
+  },
+  {
+    name: "The Khyber Himalayan Resort",
+    image: "https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg",
+    location: "Gulmarg",
+    capacity: "250 Guests",
+    type: "Luxury Ski Resort",
+    description: "Surrounded by snow-capped Himalayan peaks, this elegant resort creates magical celebrations throughout every season."
+  },
+  {
+    name: "Ananda in the Himalayas",
+    image: "https://images.pexels.com/photos/210243/pexels-photo-210243.jpeg",
+    location: "Rishikesh",
+    capacity: "120 Guests",
+    type: "Luxury Wellness Resort",
+    description: "A serene luxury retreat overlooking the Ganges Valley, ideal for intimate weddings immersed in nature."
+  },
+  {
+    name: "Moksha Himalaya Spa Resort",
+    image: "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg",
+    location: "Parwanoo",
+    capacity: "220 Guests",
+    type: "Luxury Spa Resort",
+    description: "Panoramic mountain views, luxurious suites and tranquil surroundings create unforgettable wedding experiences."
+  },
+  {
+    name: "The Oberoi Cecil",
+    image: "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg",
+    location: "Shimla",
+    capacity: "200 Guests",
+    type: "Luxury Heritage Hotel",
+    description: "A colonial-era luxury hotel combining royal elegance with spectacular Himalayan scenery."
+  },
+  {
+    name: "Aloha on the Ganges",
+    image: "https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg",
+    location: "Rishikesh",
+    capacity: "300 Guests",
+    type: "Riverside Luxury Resort",
+    description: "Celebrate beside the sacred Ganges with stunning Himalayan backdrops and luxurious hospitality."
+  }
+]
+    
   },
 
   {
@@ -167,7 +510,59 @@ export const DESTINATIONS = [
     venue: "Luxury Houseboats & Heritage Resorts",
     insight:
       "Celebrate your love amidst Kerala's tranquil backwaters, lush coconut groves, and world-class luxury resorts, offering an intimate and timeless setting for your dream wedding.",
-    img: "https://images.pexels.com/photos/35887023/pexels-photo-35887023.png?_gl=1*zgkdcr*_gcl_au*NjkyODQ0NjQuMTc4NDk3NDkyOQ..*_ga*MTg1MTY0OTY5Mi4xNzg0OTcyNjQy*_ga_8JE65Q40S6*czE3ODU0Nzc1OTkkbzUkZzEkdDE3ODU0Nzc3NjQkajMzJGwwJGgw"
+    img: "https://images.pexels.com/photos/35887023/pexels-photo-35887023.png?_gl=1*zgkdcr*_gcl_au*NjkyODQ0NjQuMTc4NDk3NDkyOQ..*_ga*MTg1MTY0OTY5Mi4xNzg0OTcyNjQy*_ga_8JE65Q40S6*czE3ODU0Nzc1OTkkbzUkZzEkdDE3ODU0Nzc3NjQkajMzJGwwJGgw",
+
+    venues: [
+  {
+    name: "Kumarakom Lake Resort",
+    image: "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg",
+    location: "Kumarakom",
+    capacity: "250 Guests",
+    type: "Luxury Backwater Resort",
+    description: "An award-winning lakeside resort surrounded by tranquil backwaters, offering authentic Kerala luxury."
+  },
+  {
+    name: "The Leela Kovalam",
+    image: "https://images.pexels.com/photos/261395/pexels-photo-261395.jpeg",
+    location: "Kovalam",
+    capacity: "350 Guests",
+    type: "Luxury Cliff Resort",
+    description: "Perched on dramatic cliffs overlooking the Arabian Sea, perfect for elegant destination weddings."
+  },
+  {
+    name: "Grand Hyatt Kochi",
+    image: "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg",
+    location: "Kochi",
+    capacity: "600 Guests",
+    type: "Luxury Waterfront Hotel",
+    description: "A magnificent waterfront venue with grand ballrooms and spectacular sunset views."
+  },
+  {
+    name: "Raviz Ashtamudi",
+    image: "https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg",
+    location: "Kollam",
+    capacity: "300 Guests",
+    type: "Luxury Backwater Resort",
+    description: "An elegant lakeside resort featuring traditional Kerala architecture and scenic backwater vistas."
+  },
+  {
+    name: "Brunton Boatyard",
+    image: "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg",
+    location: "Fort Kochi",
+    capacity: "180 Guests",
+    type: "Luxury Heritage Hotel",
+    description: "Historic colonial charm meets waterfront elegance, creating a unique wedding destination."
+  },
+  {
+    name: "Marari Beach Resort",
+    image: "https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg",
+    location: "Mararikulam",
+    capacity: "280 Guests",
+    type: "Luxury Beach Resort",
+    description: "A peaceful beachfront retreat surrounded by coconut groves and Kerala's natural beauty."
+  }
+]
+
   },
 ];
 
@@ -325,3 +720,5 @@ export const NAV = [
   { label: "Destinations", id: "destinations" },
   { label: "Contact", id: "contact" },
 ];
+
+

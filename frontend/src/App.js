@@ -9,6 +9,7 @@ import useLenis from "@/hooks/useLenis";
 import Loader from "@/components/Loader";
 import CustomCursor from "@/components/CustomCursor";
 import Header from "@/components/Header";
+import ScrollToTop from "@/components/ScrollToTop";
 
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -17,7 +18,6 @@ import Destinations from "@/components/Destinations";
 import Gallery from "@/components/Gallery";
 import Journey from "@/components/Journey";
 import Testimonials from "@/components/Testimonials";
-import Collaborations from "@/components/Collaborations";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -33,7 +33,6 @@ function HomePage({ showFooter }) {
       <Gallery />
       <Journey />
       <Testimonials />
-      <Collaborations />
       <Destinations />
       <FAQ />
       <Contact />
@@ -48,28 +47,29 @@ function App() {
   const [showFooter, setShowFooter] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
-  useEffect(() => {
-  const handleScroll = () => {
-    const hero = document.getElementById("hero");
-
-    if (!hero) return;
-
-    const heroBottom = hero.offsetTop + hero.offsetHeight;
-
-    setShowFooter(window.scrollY > heroBottom + 180);
-  };
-
-  window.addEventListener("scroll", handleScroll);
-
-  handleScroll();
-
-  return () => window.removeEventListener("scroll", handleScroll);
-  }, 
-  []);
   useLenis();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const hero = document.getElementById("hero");
+
+      if (!hero) return;
+
+      const heroBottom = hero.offsetTop + hero.offsetHeight;
+
+      setShowFooter(window.scrollY > heroBottom + 180);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="App grain" data-testid="app-root">
+      <ScrollToTop />
       <CustomCursor />
 
       <Loader onDone={() => setLoaded(true)} />
@@ -86,23 +86,23 @@ function App() {
         }}
       />
 
-      {/* Header appears on every page */}
       <Header />
+
+      {/* Automatically scrolls to top on every route change */}
+      <ScrollToTop />
 
       <main
         style={{
           opacity: loaded ? 1 : 0,
-          transition: "opacity 0.8s ease",
+          transition: "opacity .8s ease",
         }}
       >
         <Routes>
-          {/* Home Page */}
           <Route
-  path="/"
-  element={<HomePage showFooter={showFooter} />}
-/>
+            path="/"
+            element={<HomePage showFooter={showFooter} />}
+          />
 
-          {/* Destination Details Page */}
           <Route
             path="/destination/:slug"
             element={<DestinationDetails />}

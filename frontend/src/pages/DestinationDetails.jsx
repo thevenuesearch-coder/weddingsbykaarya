@@ -4,6 +4,8 @@ import { MapPin, CalendarDays, Sparkles, Landmark } from "lucide-react";
 
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import SignatureVenues from "@/components/SignatureVenues";
+import MobileSignatureVenues from "@/components/MobileSignatureVenues";
 
 import { DESTINATIONS } from "@/lib/data";
 
@@ -151,17 +153,17 @@ if (!destination) {
 
           <div className="border border-[#C9A46B]/20 p-8">
 
-            <Landmark color="#C9A46B" />
+  <Landmark color="#C9A46B" />
 
-            <h4 className="mt-6 text-lg text-[#F8F5EF]">
-              Venues
-            </h4>
+  <h4 className="mt-6 text-lg text-[#F8F5EF]">
+    Venues
+  </h4>
 
-            <p className="mt-2 text-[#E8DAC8]">
-              {destination.venue}
-            </p>
+  <p className="mt-2 text-[#E8DAC8]">
+    {destination.venue}
+  </p>
 
-          </div>
+</div>
 
           <div className="border border-[#C9A46B]/20 p-8">
 
@@ -182,40 +184,15 @@ if (!destination) {
       </div>
 
     </section>
+  
+    
+ <SignatureVenues
+  venues={destination.venues}
+/>
 
-    {/* STORY */}
-
-    <section
-      className="py-28"
-      style={{
-        background: "#552230",
-      }}
-    >
-
-      <div className="max-w-5xl mx-auto px-10 text-center">
-
-        <h2
-          className="font-serif-display text-5xl"
-          style={{ color: "#F8F5EF" }}
-        >
-          Your Story Begins Here
-        </h2>
-
-        <p
-          className="mt-10 text-lg leading-10"
-          style={{ color: "#E8DAC8" }}
-        >
-          Every destination has a soul. Every celebration deserves a setting
-          that reflects your love story.
-
-          From the first welcome dinner to the final farewell brunch, every
-          experience is thoughtfully designed, flawlessly executed and crafted
-          with timeless elegance.
-        </p>
-
-      </div>
-
-    </section>
+<MobileSignatureVenues
+  venues={destination.venues}
+/>
 
     {/* CTA */}
 
