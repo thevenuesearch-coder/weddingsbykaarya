@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
@@ -22,8 +23,8 @@ import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
-import DestinationDetails from "@/pages/DestinationDetails";
 import WeddingJourney from "@/pages/WeddingJourney";
+import DestinationDetails from "@/pages/DestinationDetails";
 
 function HomePage({ showFooter }) {
   return (
@@ -98,6 +99,12 @@ function App() {
         }}
       >
         <Routes>
+
+          <Route
+            path="/journey"
+            element={<WeddingJourney />}
+          />
+
           <Route
             path="/"
             element={<HomePage showFooter={showFooter} />}

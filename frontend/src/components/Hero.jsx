@@ -163,13 +163,6 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Diyas along the bottom */}
-      <div className="absolute bottom-4 inset-x-0 z-30 flex items-end justify-center gap-8 md:gap-16 opacity-90">
-        {[0, 1, 2, 3, 4].map((i) => (
-          <Diya key={i} className="w-8 h-8 md:w-11 md:h-11" style={{ animationDelay: `${i * 0.3}s` }} />
-        ))}
-      </div>
-
       {/* Scroll cue */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -185,19 +178,22 @@ export default function Hero() {
 <div className="absolute bottom-0 left-0 w-full z-30">
 
   <div
-    className="overflow-hidden py-5"
+    className="relative overflow-hidden py-6"
     style={{
-      backdropFilter: "blur(18px)",
-      WebkitBackdropFilter: "blur(18px)",
-      background:
-        "linear-gradient(180deg, rgba(78,30,39,.18), rgba(78,30,39,.58))",
-      borderTop: "1px solid rgba(201,164,107,.18)",
-    }}
+  background: "transparent",
+
+  borderTop: "1px solid rgba(255,255,255,0.06)",
+}}
   >
 
+    {/* Glass reflection */}
+    
+
     <p
-      className="text-center uppercase tracking-[0.45em] text-xs mb-5"
-      style={{ color: "#C9A46B" }}
+      className="text-center uppercase tracking-[0.45em] text-xs mb-6"
+      style={{
+        color: "#C9A46B",
+      }}
     >
       Trusted By
     </p>
@@ -238,22 +234,28 @@ export default function Hero() {
           key={index}
           className="mx-14 flex-shrink-0"
         >
+
           <img
             src={logo}
             alt="Partner Logo"
             className="
-h-12
-w-auto
-object-contain
-opacity-80
-hover:opacity-100
-hover:scale-110
-transition-all
-duration-500
-brightness-0
-invert
-"
+              h-12
+              w-auto
+              object-contain
+              transition-all
+              duration-500
+              brightness-0
+              invert
+              opacity-80
+              hover:opacity-100
+              hover:scale-110
+            "
+            style={{
+              filter:
+                "brightness(0) invert(1) drop-shadow(0 0 10px rgba(255,255,255,.18))",
+            }}
           />
+
         </div>
 
       ))}

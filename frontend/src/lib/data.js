@@ -724,6 +724,7 @@ export const FAQS = [
 export const NAV = [
   { label: "The Studio", id: "about" },
   { label: "Portolio", id: "gallery" },
+  { id: "journey", label: "Journey" },
   { label: "Destinations", id: "destinations" },
   { label: "Contact", id: "contact" },
 ];

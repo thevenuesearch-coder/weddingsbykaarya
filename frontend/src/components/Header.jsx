@@ -36,18 +36,24 @@ export default function Header() {
   }, [location, isHome]);
 
   const go = (id) => {
-    setOpen(false);
+  setOpen(false);
 
-    if (isHome) {
-      setTimeout(() => scrollToId(id), 60);
-    } else {
-      navigate("/", {
-        state: {
-          scrollTo: id,
-        },
-      });
-    }
-  };
+  // Journey page
+  if (id === "journey") {
+    navigate("/journey");
+    return;
+  }
+
+  if (isHome) {
+    setTimeout(() => scrollToId(id), 60);
+  } else {
+    navigate("/", {
+      state: {
+        scrollTo: id,
+      },
+    });
+  }
+};
 
   return (
     <motion.header
@@ -127,7 +133,7 @@ inset 0 1px rgba(255,255,255,.18),
         {/* Logo */}
         <button
           data-testid="logo-home"
-          onClick={() => go("hero")}
+          onClick={() => navigate("/")}
           className="flex items-center gap-3 group"
         >
           <img
