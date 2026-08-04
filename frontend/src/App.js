@@ -23,6 +23,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 import DestinationDetails from "@/pages/DestinationDetails";
+import WeddingJourney from "@/pages/WeddingJourney";
 
 function HomePage({ showFooter }) {
   return (
@@ -31,7 +32,6 @@ function HomePage({ showFooter }) {
       <About />
       <Marquee />
       <Gallery />
-      <Journey />
       <Testimonials />
       <Destinations />
       <FAQ />
@@ -101,6 +101,11 @@ function App() {
           <Route
             path="/"
             element={<HomePage showFooter={showFooter} />}
+          />
+
+          <Route
+            path="/wedding-journey"
+            element={<WeddingJourney />}
           />
 
           <Route

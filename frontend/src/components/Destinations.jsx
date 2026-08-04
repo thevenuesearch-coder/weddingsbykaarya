@@ -73,13 +73,19 @@ function DestinationPanel({ d, index }) {
 }}
           >
             <div className="relative overflow-hidden cursor-pointer" style={{ border: "1px solid rgba(201,164,107,0.3)" }}>
-              <motion.img
-                style={{ y: yImg, scale: scaleImg }}
-                src={d.img}
-                alt={`${d.name}, ${d.country} — luxury destination wedding`}
-                loading="lazy"
-                className="w-full h-[420px] md:h-[560px] object-cover"
-              />
+             <motion.video
+    src={d.video}
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="auto"
+    className="w-full h-[420px] md:h-[560px] object-cover"
+    style={{
+        y: yImg,
+        scale: scaleImg,
+    }}
+/>
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(78,30,39,0.7), transparent 55%)" }} />
               {/* Floating tag chip (3D lift) */}
               <div style={{ transform: "translateZ(40px)" }} className="absolute bottom-5 left-5 px-4 py-2" data-testid={`destination-tag-${index}`}>

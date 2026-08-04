@@ -82,6 +82,7 @@ export const DESTINATIONS = [
     country: "India",
     tag: "The City of Lakes",
     img: "https://images.unsplash.com/photo-1615836245337-f5b9b2303f10?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
+    video: "/videos/Udaipur.mp4",
     season: "Oct – Mar",
     vibe: "Regal & Romantic",
     venue: "Lake palaces & marble courtyards",
@@ -124,6 +125,7 @@ export const DESTINATIONS = [
     country: "India",
     tag: "The Pink City",
     img: "https://images.unsplash.com/photo-1599661046289-e31897846e41?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
+    video: "/videos/Jaipur.mp4",
     season: "Nov – Feb",
     vibe: "Majestic & Opulent",
     venue: "Forts, havelis & heritage hotels",
@@ -187,6 +189,7 @@ export const DESTINATIONS = [
     country: "India",
     tag: "The Coastal Escape",
     img: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
+    video: "/videos/Goa.mp4",
     season: "Nov – Feb",
     vibe: "Breezy & Barefoot",
     venue: "Private beaches & clifftop villas",
@@ -250,6 +253,7 @@ export const DESTINATIONS = [
     country: "Indonesia",
     tag: "The Island of Gods",
     img: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
+    video: "/videos/Bali.mp4",
     season: "Apr – Oct",
     vibe: "Spiritual & Lush",
     venue: "Cliff resorts & jungle sanctuaries",
@@ -313,6 +317,7 @@ export const DESTINATIONS = [
     country: "Thailand",
     tag: "The Andaman Jewel",
     img: "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
+    video: "/videos/Phuket.mp4",
     season: "Nov – Apr",
     vibe: "Tropical & Grand",
     venue: "Beachfront estates & island villas",
@@ -377,6 +382,7 @@ export const DESTINATIONS = [
     country: "Sri Lanka",
     tag: "Atlantic Ambience",
     img: "https://images.pexels.com/photos/319892/pexels-photo-319892.jpeg?_gl=1*18h4jco*_ga*MjI0NzAxMTY1LjE3ODQ3ODg2ODI.*_ga_8JE65Q40S6*czE3ODU1ODUwMDIkbzckZzEkdDE3ODU1ODUwMjAkajQyJGwwJGgw",
+    video: "/videos/Srilanka.mp4",
     season: "Nov – Apr",
     vibe: "Breezy & Barefoot",
     venue: "Luxury cliff resorts",
@@ -446,6 +452,7 @@ export const DESTINATIONS = [
     insight:
       "Exchange vows amidst the majestic Himalayan peaks, where crisp mountain air, breathtaking landscapes, and luxurious resorts create an unforgettable destination wedding experience.",
     img: "https://images.pexels.com/photos/5238635/pexels-photo-5238635.jpeg?_gl=1*vhb63t*_gcl_au*NjkyODQ0NjQuMTc4NDk3NDkyOQ..*_ga*MTg1MTY0OTY5Mi4xNzg0OTcyNjQy*_ga_8JE65Q40S6*czE3ODU0Nzc1OTkkbzUkZzEkdDE3ODU0Nzc2NTkkajYwJGwwJGgw",
+    video: "/videos/Himalaya.mp4",
 
     venues: [
   {
@@ -511,6 +518,7 @@ export const DESTINATIONS = [
     insight:
       "Celebrate your love amidst Kerala's tranquil backwaters, lush coconut groves, and world-class luxury resorts, offering an intimate and timeless setting for your dream wedding.",
     img: "https://images.pexels.com/photos/35887023/pexels-photo-35887023.png?_gl=1*zgkdcr*_gcl_au*NjkyODQ0NjQuMTc4NDk3NDkyOQ..*_ga*MTg1MTY0OTY5Mi4xNzg0OTcyNjQy*_ga_8JE65Q40S6*czE3ODU0Nzc1OTkkbzUkZzEkdDE3ODU0Nzc3NjQkajMzJGwwJGgw",
+     video: "/videos/Kerala.mp4",
 
     venues: [
   {
@@ -716,9 +724,7 @@ export const FAQS = [
 export const NAV = [
   { label: "The Studio", id: "about" },
   { label: "Portolio", id: "gallery" },
-  { label: "Journey", id: "journey" },
   { label: "Destinations", id: "destinations" },
   { label: "Contact", id: "contact" },
 ];
-
 
