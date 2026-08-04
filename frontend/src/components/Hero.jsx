@@ -94,7 +94,10 @@ export default function Hero() {
       <Petals />
 
       {/* Content */}
-      <motion.div style={{ y: yContent, opacity }} className="relative z-30 h-full flex flex-col items-center justify-center text-center px-6">
+    <motion.div
+  style={{ y: yContent, opacity }}
+  className="relative z-30 h-full flex flex-col items-center justify-center text-center px-6 pt-24 md:pt-32"
+>
         <motion.div
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -113,30 +116,19 @@ export default function Hero() {
           India&apos;s Finest Destination Wedding Company
         </motion.p>
 
-        <h1 className="font-serif-display font-light leading-[1.05] text-[clamp(2.6rem,10vw,5.5rem)]" style={{ color: "#F8F5EF" }}>
+        <h1 className="font-serif-display font-light leading-[1.05] text-[clamp(3rem,10vw,6.5rem)]" style={{ color: "#F8F5EF" }}>
           <MaskedLines
             lines={["Where Dreams Become", "Timeless Celebrations"]}
             delay={0.6}
           />
         </h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.4, duration: 1.1 }}
-          className="mt-6 max-w-md md:max-w-2xl text-[15px] md:text-base leading-8 font-light px-3"
-          style={{ color: "#E8DAC8" }}
-        >
-          At Weddings by Kaarya, we transform your vision into an extraordinary celebration with bespoke
-          planning, royal aesthetics, and flawless execution — crafted to reflect India&apos;s rich traditions
-          while embracing modern luxury.
-        </motion.p>
-
+        
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.7, duration: 1 }}
-          className="mt-7 flex items-center justify-center gap-4 text-xs md:text-sm tracking-[0.32em] uppercase font-serif-display"
+          className="mt-12 flex items-center justify-center gap-4 text-xs md:text-sm tracking-[0.32em] uppercase font-serif-display"
           style={{ color: "#C9A46B" }}
         >
           <span>Dream</span>
@@ -150,7 +142,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.9, duration: 1 }}
-          className="mt-8 flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto px-6"
+          className="mt-12 flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto px-6"
         >
           <button
             data-testid="hero-cta-primary"
