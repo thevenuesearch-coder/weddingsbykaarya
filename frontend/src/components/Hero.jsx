@@ -79,6 +79,7 @@ export default function Hero() {
   }}
 />
 
+
 <div
   className="absolute inset-0"
   style={{
@@ -87,11 +88,7 @@ export default function Hero() {
   }}
 />
 
-      {/* Rotating mandala */}
-      <Mandala className="absolute -right-28 -top-28 w-[420px] h-[420px] md:w-[620px] md:h-[620px] animate-spin-slow opacity-[0.18] z-10" />
-      <Mandala className="absolute -left-40 bottom-[-10rem] w-[380px] h-[380px] animate-spin-slow-rev opacity-[0.12] z-10 hidden md:block" />
-
-      <Petals />
+      
 
       {/* Content */}
     <motion.div
