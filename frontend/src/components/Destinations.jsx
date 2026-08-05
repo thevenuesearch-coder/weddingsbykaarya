@@ -86,7 +86,7 @@ function DestinationPanel({ d, index }) {
         scale: scaleImg,
     }}
 />
-              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(78,30,39,0.7), transparent 55%)" }} />
+              
               {/* Floating tag chip (3D lift) */}
               <div style={{ transform: "translateZ(40px)" }} className="absolute bottom-5 left-5 px-4 py-2" data-testid={`destination-tag-${index}`}>
                 <span className="text-[0.7rem] tracking-[0.3em] uppercase" style={{ color: "#C9A46B" }}>{d.tag}</span>

@@ -64,9 +64,82 @@ export default function About() {
           >
             A house built on a single promise
           </h2>
+
+          <div className="mt-14 mb-16">
+
+  <div
+    className="grid grid-cols-2 md:grid-cols-5 overflow-hidden"
+    style={{
+      borderTop: "1px solid rgba(201,164,107,.22)",
+      borderBottom: "1px solid rgba(201,164,107,.22)",
+    }}
+  >
+
+    {[
+      {
+        number: "500+",
+        label: "WEDDINGS PLANNED",
+      },
+      {
+        number: "18+",
+        label: "DESTINATIONS",
+      },
+      {
+        number: "150+",
+        label: "LUXURY VENUES",
+      },
+      {
+        number: "12+",
+        label: "YEARS OF EXPERIENCE",
+      },
+      {
+        number: "98%",
+        label: "CLIENT SATISFACTION",
+      },
+    ].map((item, index) => (
+
+      <div
+        key={index}
+        className="py-10 px-6 text-center"
+        style={{
+          borderRight:
+            index !== 4
+              ? "1px solid rgba(201,164,107,.15)"
+              : "none",
+        }}
+      >
+
+        <h3
+          className="font-serif-display text-5xl md:text-6xl"
+          style={{
+            color: "#F8F5EF",
+          }}
+        >
+          {item.number}
+        </h3>
+
+        <p
+          className="mt-4 text-xs tracking-[0.38em] uppercase"
+          style={{
+            color: "#C9A46B",
+          }}
+        >
+          {item.label}
+        </p>
+
+      </div>
+
+    ))}
+
+  </div>
+
+</div>
+
+<LotusDivider className="my-10" />
+
         </Reveal>
 
-        <LotusDivider className="my-10" />
+        
 
         <div className="grid lg:grid-cols-2 gap-14 lg:gap-24 items-center">
 
