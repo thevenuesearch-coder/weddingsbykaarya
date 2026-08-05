@@ -642,7 +642,6 @@ export const FAQS = [
 
     points: [
       "Venue shortlists are delivered within 7–14 business days",
-      "Planner recommendations within 5–7 business days",
       "Vendor recommendations within 5–10 business days",
     ],
   },
@@ -663,7 +662,7 @@ export const FAQS = [
   },
 
   {
-    q: "How do you select planners and vendors?",
+    q: "How do you select vendors?",
     intro:
       "We carefully curate recommendations based on:",
 
