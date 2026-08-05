@@ -91,7 +91,7 @@ export const DESTINATIONS = [
     venues: [
     {
       name: "Taj Lake Palace",
-      image: "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg",
+      image: "https://images.pexels.com/photos/33658451/pexels-photo-33658451.jpeg?_gl=1*1etctw3*_ga*MjI0NzAxMTY1LjE3ODQ3ODg2ODI.*_ga_8JE65Q40S6*czE3ODU5MTMzNjQkbzkkZzEkdDE3ODU5MTM1MjgkajU5JGwwJGgw",
       location: "Lake Pichola",
       capacity: "250 Guests",
       type: "Luxury Heritage Palace",
@@ -100,7 +100,7 @@ export const DESTINATIONS = [
     },
     {
       name: "The Oberoi Udaivilas",
-      image: "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg",
+      image: "https://images.pexels.com/photos/33485965/pexels-photo-33485965.jpeg?_gl=1*1e82zho*_ga*MjI0NzAxMTY1LjE3ODQ3ODg2ODI.*_ga_8JE65Q40S6*czE3ODU5MTMzNjQkbzkkZzEkdDE3ODU5MTM1NzEkajE2JGwwJGgw",
       location: "Udaipur",
       capacity: "350 Guests",
       type: "Luxury Resort",
@@ -108,8 +108,8 @@ export const DESTINATIONS = [
         "World-renowned luxury resort with grand courtyards and magnificent architecture."
     },
     {
-      name: "City Palace",
-      image: "https://images.pexels.com/photos/1619317/pexels-photo-1619317.jpeg",
+      name: "raffles udaipur",
+      image: "https://images.pexels.com/photos/38749940/pexels-photo-38749940.jpeg?_gl=1*kxgdig*_gcl_au*NjkyODQ0NjQuMTc4NDk3NDkyOQ..*_ga*MTg1MTY0OTY5Mi4xNzg0OTcyNjQy*_ga_8JE65Q40S6*czE3ODU5MTM2MDgkbzgkZzEkdDE3ODU5MTM2MjIkajQ2JGwwJGgw",
       location: "Udaipur",
       capacity: "500 Guests",
       type: "Royal Palace",
@@ -134,7 +134,7 @@ export const DESTINATIONS = [
     venues: [
   {
     name: "Rambagh Palace",
-    image: "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg",
+    image: "https://images.pexels.com/photos/34669530/pexels-photo-34669530.jpeg?_gl=1*18psbq3*_ga*MjI0NzAxMTY1LjE3ODQ3ODg2ODI.*_ga_8JE65Q40S6*czE3ODU5MTMzNjQkbzkkZzEkdDE3ODU5MTM3MjEkajI2JGwwJGgw",
     location: "Jaipur",
     capacity: "350 Guests",
     type: "Luxury Palace Hotel",
@@ -142,7 +142,7 @@ export const DESTINATIONS = [
   },
   {
     name: "Fairmont Jaipur",
-    image: "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg",
+    image: "https://images.pexels.com/photos/9179927/pexels-photo-9179927.jpeg?_gl=1*hwkqcx*_ga*MjI0NzAxMTY1LjE3ODQ3ODg2ODI.*_ga_8JE65Q40S6*czE3ODU5MTMzNjQkbzkkZzEkdDE3ODU5MTM4MTYkajU0JGwwJGgw",
     location: "Jaipur",
     capacity: "800 Guests",
     type: "Luxury Resort",
@@ -150,7 +150,7 @@ export const DESTINATIONS = [
   },
   {
     name: "Samode Palace",
-    image: "https://images.pexels.com/photos/1619317/pexels-photo-1619317.jpeg",
+    image: "https://images.pexels.com/photos/33797754/pexels-photo-33797754.jpeg?_gl=1*146bxwe*_ga*MjI0NzAxMTY1LjE3ODQ3ODg2ODI.*_ga_8JE65Q40S6*czE3ODU5MTMzNjQkbzkkZzEkdDE3ODU5MTM4NzgkajU5JGwwJGgw",
     location: "Jaipur",
     capacity: "250 Guests",
     type: "Heritage Palace",
@@ -158,23 +158,15 @@ export const DESTINATIONS = [
   },
   {
     name: "Jai Mahal Palace",
-    image: "https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg",
+    image: "https://images.pexels.com/photos/37475174/pexels-photo-37475174.jpeg?_gl=1*wc6flj*_ga*MjI0NzAxMTY1LjE3ODQ3ODg2ODI.*_ga_8JE65Q40S6*czE3ODU5MTMzNjQkbzkkZzEkdDE3ODU5MTQwMjIkajIyJGwwJGgw",
     location: "Jaipur",
     capacity: "500 Guests",
     type: "Luxury Heritage Hotel",
     description: "Beautiful Mughal gardens and timeless architecture perfect for destination weddings."
   },
   {
-    name: "Raj Palace",
-    image: "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg",
-    location: "Jaipur",
-    capacity: "300 Guests",
-    type: "Royal Palace",
-    description: "One of Jaipur's oldest palaces offering regal wedding experiences."
-  },
-  {
     name: "Le Meridien Jaipur",
-    image: "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg",
+    image: "https://images.pexels.com/photos/3659960/pexels-photo-3659960.jpeg?_gl=1*p9icoc*_ga*MjI0NzAxMTY1LjE3ODQ3ODg2ODI.*_ga_8JE65Q40S6*czE3ODU5MTMzNjQkbzkkZzEkdDE3ODU5MTQxMjgkajYwJGwwJGgw",
     location: "Jaipur",
     capacity: "700 Guests",
     type: "Luxury Hotel",
@@ -198,7 +190,7 @@ export const DESTINATIONS = [
     venues: [
   {
     name: "Taj Exotica Resort",
-    image: "https://images.pexels.com/photos/261395/pexels-photo-261395.jpeg",
+    image: "https://images.pexels.com/photos/28368721/pexels-photo-28368721.jpeg?_gl=1*8tohrp*_ga*MjI0NzAxMTY1LjE3ODQ3ODg2ODI.*_ga_8JE65Q40S6*czE3ODU5MTMzNjQkbzkkZzEkdDE3ODU5MTQxODckajEkbDAkaDA.",
     location: "South Goa",
     capacity: "450 Guests",
     type: "Beach Resort",
@@ -214,31 +206,15 @@ export const DESTINATIONS = [
   },
   {
     name: "Grand Hyatt Goa",
-    image: "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg",
+    image: "https://images.pexels.com/photos/35808145/pexels-photo-35808145.jpeg?_gl=1*iou0t4*_ga*MjI0NzAxMTY1LjE3ODQ3ODg2ODI.*_ga_8JE65Q40S6*czE3ODU5MTMzNjQkbzkkZzEkdDE3ODU5MTQzNzUkajU5JGwwJGgw",
     location: "Bambolim",
     capacity: "700 Guests",
     type: "Luxury Hotel",
     description: "Magnificent waterfront venue overlooking Bambolim Bay."
   },
   {
-    name: "W Goa",
-    image: "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg",
-    location: "Vagator",
-    capacity: "350 Guests",
-    type: "Luxury Lifestyle Resort",
-    description: "Modern luxury with dramatic cliffside ocean views."
-  },
-  {
-    name: "Planet Hollywood",
-    image: "https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg",
-    location: "Utorda",
-    capacity: "600 Guests",
-    type: "Beach Resort",
-    description: "Elegant beachfront destination with grand wedding lawns."
-  },
-  {
     name: "Alila Diwa Goa",
-    image: "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg",
+    image: "https://images.unsplash.com/photo-1633234606371-4e8edaa6eb30?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Majorda",
     capacity: "300 Guests",
     type: "Luxury Resort",
@@ -262,7 +238,7 @@ export const DESTINATIONS = [
     venues: [
   {
     name: "Ayana Resort",
-    image: "https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg",
+    image: "https://images.unsplash.com/photo-1628671708594-b8e9358dc5bf?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Jimbaran",
     capacity: "500 Guests",
     type: "Luxury Cliff Resort",
@@ -270,7 +246,7 @@ export const DESTINATIONS = [
   },
   {
     name: "The Apurva Kempinski",
-    image: "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg",
+    image: "https://images.pexels.com/photos/29863339/pexels-photo-29863339.jpeg?_gl=1*3udhtq*_ga*MjI0NzAxMTY1LjE3ODQ3ODg2ODI.*_ga_8JE65Q40S6*czE3ODU5MTMzNjQkbzkkZzEkdDE3ODU5MTQ1OTckajIyJGwwJGgw",
     location: "Nusa Dua",
     capacity: "800 Guests",
     type: "Luxury Resort",
@@ -278,23 +254,15 @@ export const DESTINATIONS = [
   },
   {
     name: "Alila Villas Uluwatu",
-    image: "https://images.pexels.com/photos/261395/pexels-photo-261395.jpeg",
+    image: "https://plus.unsplash.com/premium_photo-1697730165391-265e1b94d550?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Uluwatu",
     capacity: "200 Guests",
     type: "Luxury Villas",
     description: "Minimalist luxury perched dramatically above the ocean."
   },
   {
-    name: "Four Seasons Jimbaran",
-    image: "https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg",
-    location: "Jimbaran",
-    capacity: "300 Guests",
-    type: "Luxury Resort",
-    description: "Elegant villas surrounded by tropical gardens and ocean views."
-  },
-  {
     name: "Bulgari Resort Bali",
-    image: "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg",
+    image: "https://images.unsplash.com/photo-1694967832949-09984640b143?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Uluwatu",
     capacity: "180 Guests",
     type: "Luxury Resort",
@@ -302,7 +270,7 @@ export const DESTINATIONS = [
   },
   {
     name: "The Mulia Bali",
-    image: "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg",
+    image: "https://images.unsplash.com/photo-1709525754673-c85a0c11dd15?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Nusa Dua",
     capacity: "700 Guests",
     type: "Luxury Beach Resort",
@@ -326,7 +294,7 @@ export const DESTINATIONS = [
     venues: [
   {
     name: "Sri Panwa",
-    image: "https://images.pexels.com/photos/261395/pexels-photo-261395.jpeg",
+    image: "https://images.pexels.com/photos/8299825/pexels-photo-8299825.jpeg?_gl=1*14uinr4*_ga*MjI0NzAxMTY1LjE3ODQ3ODg2ODI.*_ga_8JE65Q40S6*czE3ODU5MTMzNjQkbzkkZzEkdDE3ODU5MTQ4NjAkajQ3JGwwJGgw",
     location: "Cape Panwa",
     capacity: "250 Guests",
     type: "Luxury Villas",
@@ -334,7 +302,7 @@ export const DESTINATIONS = [
   },
   {
     name: "Amanpuri",
-    image: "https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg",
+    image: "https://images.pexels.com/photos/1002525/pexels-photo-1002525.jpeg?_gl=1*ebwwx5*_ga*MjI0NzAxMTY1LjE3ODQ3ODg2ODI.*_ga_8JE65Q40S6*czE3ODU5MTMzNjQkbzkkZzEkdDE3ODU5MTQ4OTAkajE3JGwwJGgw",
     location: "Surin Beach",
     capacity: "180 Guests",
     type: "Luxury Resort",
@@ -342,7 +310,7 @@ export const DESTINATIONS = [
   },
   {
     name: "Rosewood Phuket",
-    image: "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg",
+    image: "https://images.unsplash.com/photo-1586968425481-3285b99f3b44?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Patong",
     capacity: "220 Guests",
     type: "Luxury Beach Resort",
@@ -350,7 +318,7 @@ export const DESTINATIONS = [
   },
   {
     name: "Anantara Mai Khao",
-    image: "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg",
+    image: "https://images.pexels.com/photos/27379639/pexels-photo-27379639.jpeg?_gl=1*167n848*_ga*MjI0NzAxMTY1LjE3ODQ3ODg2ODI.*_ga_8JE65Q40S6*czE3ODU5MTMzNjQkbzkkZzEkdDE3ODU5MTQ5NTUkajEyJGwwJGgw",
     location: "Mai Khao",
     capacity: "400 Guests",
     type: "Luxury Resort",
@@ -358,19 +326,11 @@ export const DESTINATIONS = [
   },
   {
     name: "Trisara Phuket",
-    image: "https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg",
+    image: "https://images.pexels.com/photos/33779909/pexels-photo-33779909.jpeg?_gl=1*qk2ojj*_ga*MjI0NzAxMTY1LjE3ODQ3ODg2ODI.*_ga_8JE65Q40S6*czE3ODU5MTMzNjQkbzkkZzEkdDE3ODU5MTQ5OTAkajQ5JGwwJGgw",
     location: "Cherngtalay",
     capacity: "150 Guests",
     type: "Luxury Villas",
     description: "Exclusive private villas overlooking the Andaman Sea."
-  },
-  {
-    name: "The Nai Harn",
-    image: "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg",
-    location: "Nai Harn Beach",
-    capacity: "300 Guests",
-    type: "Luxury Hotel",
-    description: "Romantic seaside venue with stunning ocean panoramas."
   }
 ]
 
@@ -391,7 +351,7 @@ export const DESTINATIONS = [
     venues: [
   {
     name: "Cape Weligama",
-    image: "https://images.pexels.com/photos/261395/pexels-photo-261395.jpeg",
+    image: "https://images.pexels.com/photos/29813522/pexels-photo-29813522.jpeg?_gl=1*v3hu3x*_ga*MjI0NzAxMTY1LjE3ODQ3ODg2ODI.*_ga_8JE65Q40S6*czE3ODU5MTMzNjQkbzkkZzEkdDE3ODU5MTUzMjEkajU5JGwwJGgw",
     location: "Weligama",
     capacity: "250 Guests",
     type: "Luxury Cliff Resort",
@@ -399,7 +359,7 @@ export const DESTINATIONS = [
   },
   {
     name: "Shangri-La Hambantota",
-    image: "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg",
+    image: "https://images.pexels.com/photos/5318062/pexels-photo-5318062.jpeg?_gl=1*qmm2ld*_ga*MjI0NzAxMTY1LjE3ODQ3ODg2ODI.*_ga_8JE65Q40S6*czE3ODU5MTMzNjQkbzkkZzEkdDE3ODU5MTU1MzckajUzJGwwJGgw",
     location: "Hambantota",
     capacity: "700 Guests",
     type: "Luxury Resort",
@@ -407,7 +367,7 @@ export const DESTINATIONS = [
   },
   {
     name: "Cinnamon Bentota",
-    image: "https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg",
+    image: "https://images.pexels.com/photos/36477914/pexels-photo-36477914.jpeg?_gl=1*1sju7n2*_ga*MjI0NzAxMTY1LjE3ODQ3ODg2ODI.*_ga_8JE65Q40S6*czE3ODU5MTMzNjQkbzkkZzEkdDE3ODU5MTU1NzUkajE1JGwwJGgw",
     location: "Bentota",
     capacity: "400 Guests",
     type: "Beach Resort",
@@ -415,7 +375,7 @@ export const DESTINATIONS = [
   },
   {
     name: "Jetwing Lighthouse",
-    image: "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg",
+    image: "https://plus.unsplash.com/premium_photo-1677653127993-8ceba8f88764?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Galle",
     capacity: "280 Guests",
     type: "Luxury Hotel",
@@ -423,7 +383,7 @@ export const DESTINATIONS = [
   },
   {
     name: "Amangalla",
-    image: "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg",
+    image: "https://images.pexels.com/photos/19479625/pexels-photo-19479625.jpeg?_gl=1*329lde*_ga*MjI0NzAxMTY1LjE3ODQ3ODg2ODI.*_ga_8JE65Q40S6*czE3ODU5MTMzNjQkbzkkZzEkdDE3ODU5MTU4ODEkajI4JGwwJGgw",
     location: "Galle Fort",
     capacity: "180 Guests",
     type: "Luxury Heritage Hotel",
@@ -431,7 +391,7 @@ export const DESTINATIONS = [
   },
   {
     name: "Anantara Peace Haven",
-    image: "https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg",
+    image: "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?_gl=1*1pfikxt*_ga*MjI0NzAxMTY1LjE3ODQ3ODg2ODI.*_ga_8JE65Q40S6*czE3ODU5MTMzNjQkbzkkZzEkdDE3ODU5MTU5MjEkajUxJGwwJGgw",
     location: "Tangalle",
     capacity: "300 Guests",
     type: "Luxury Beach Resort",
@@ -457,7 +417,7 @@ export const DESTINATIONS = [
     venues: [
   {
     name: "Wildflower Hall",
-    image: "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg",
+    image: "https://images.unsplash.com/photo-1562597249-aef6464689a0?q=80&w=1228&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Shimla",
     capacity: "180 Guests",
     type: "Luxury Mountain Resort",
@@ -465,7 +425,7 @@ export const DESTINATIONS = [
   },
   {
     name: "The Khyber Himalayan Resort",
-    image: "https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg",
+    image: "https://images.unsplash.com/photo-1663311423420-2bf160d2551a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Gulmarg",
     capacity: "250 Guests",
     type: "Luxury Ski Resort",
@@ -473,7 +433,7 @@ export const DESTINATIONS = [
   },
   {
     name: "Ananda in the Himalayas",
-    image: "https://images.pexels.com/photos/210243/pexels-photo-210243.jpeg",
+    image: "https://images.pexels.com/photos/6242403/pexels-photo-6242403.jpeg?_gl=1*8f2q7a*_ga*MjI0NzAxMTY1LjE3ODQ3ODg2ODI.*_ga_8JE65Q40S6*czE3ODU5MTMzNjQkbzkkZzEkdDE3ODU5MTYxMzYkajU5JGwwJGgw",
     location: "Rishikesh",
     capacity: "120 Guests",
     type: "Luxury Wellness Resort",
@@ -481,7 +441,7 @@ export const DESTINATIONS = [
   },
   {
     name: "Moksha Himalaya Spa Resort",
-    image: "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg",
+    image: "https://images.pexels.com/photos/30607278/pexels-photo-30607278.jpeg?_gl=1*1dbaiec*_ga*MjI0NzAxMTY1LjE3ODQ3ODg2ODI.*_ga_8JE65Q40S6*czE3ODU5MTMzNjQkbzkkZzEkdDE3ODU5MTYyNTkkajE5JGwwJGgw",
     location: "Parwanoo",
     capacity: "220 Guests",
     type: "Luxury Spa Resort",
@@ -489,7 +449,7 @@ export const DESTINATIONS = [
   },
   {
     name: "The Oberoi Cecil",
-    image: "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg",
+    image: "https://plus.unsplash.com/premium_photo-1675187975486-e659bff91a9f?q=80&w=1202&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Shimla",
     capacity: "200 Guests",
     type: "Luxury Heritage Hotel",
@@ -497,7 +457,7 @@ export const DESTINATIONS = [
   },
   {
     name: "Aloha on the Ganges",
-    image: "https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg",
+    image: "https://images.unsplash.com/photo-1646153110989-a9a8f03314f3?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Rishikesh",
     capacity: "300 Guests",
     type: "Riverside Luxury Resort",
@@ -523,7 +483,7 @@ export const DESTINATIONS = [
     venues: [
   {
     name: "Kumarakom Lake Resort",
-    image: "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg",
+    image: "https://plus.unsplash.com/premium_photo-1661962821338-c07da63995f9?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Kumarakom",
     capacity: "250 Guests",
     type: "Luxury Backwater Resort",
@@ -531,7 +491,7 @@ export const DESTINATIONS = [
   },
   {
     name: "The Leela Kovalam",
-    image: "https://images.pexels.com/photos/261395/pexels-photo-261395.jpeg",
+    image: "https://images.pexels.com/photos/35887023/pexels-photo-35887023.png?_gl=1*zgkdcr*_gcl_au*NjkyODQ0NjQuMTc4NDk3NDkyOQ..*_ga*MTg1MTY0OTY5Mi4xNzg0OTcyNjQy*_ga_8JE65Q40S6*czE3ODU0Nzc1OTkkbzUkZzEkdDE3ODU0Nzc3NjQkajMzJGwwJGgw",
     location: "Kovalam",
     capacity: "350 Guests",
     type: "Luxury Cliff Resort",
@@ -539,7 +499,7 @@ export const DESTINATIONS = [
   },
   {
     name: "Grand Hyatt Kochi",
-    image: "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg",
+    image: "https://images.pexels.com/photos/3048212/pexels-photo-3048212.jpeg?_gl=1*13nkpj3*_ga*MjI0NzAxMTY1LjE3ODQ3ODg2ODI.*_ga_8JE65Q40S6*czE3ODU5MTMzNjQkbzkkZzEkdDE3ODU5MTY1MTAkajM4JGwwJGgw",
     location: "Kochi",
     capacity: "600 Guests",
     type: "Luxury Waterfront Hotel",
@@ -547,7 +507,7 @@ export const DESTINATIONS = [
   },
   {
     name: "Raviz Ashtamudi",
-    image: "https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg",
+    image: "https://images.pexels.com/photos/20035184/pexels-photo-20035184.jpeg?_gl=1*1xbxr0t*_ga*MjI0NzAxMTY1LjE3ODQ3ODg2ODI.*_ga_8JE65Q40S6*czE3ODU5MTMzNjQkbzkkZzEkdDE3ODU5MTY1NDUkajMkbDAkaDA.",
     location: "Kollam",
     capacity: "300 Guests",
     type: "Luxury Backwater Resort",
@@ -555,7 +515,7 @@ export const DESTINATIONS = [
   },
   {
     name: "Brunton Boatyard",
-    image: "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg",
+    image: "https://images.pexels.com/photos/14973045/pexels-photo-14973045.jpeg?_gl=1*au1yhy*_ga*MjI0NzAxMTY1LjE3ODQ3ODg2ODI.*_ga_8JE65Q40S6*czE3ODU5MTMzNjQkbzkkZzEkdDE3ODU5MTY1ODQkajUxJGwwJGgw",
     location: "Fort Kochi",
     capacity: "180 Guests",
     type: "Luxury Heritage Hotel",
@@ -563,7 +523,7 @@ export const DESTINATIONS = [
   },
   {
     name: "Marari Beach Resort",
-    image: "https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg",
+    image: "https://images.pexels.com/photos/27429700/pexels-photo-27429700.jpeg?_gl=1*xg7czy*_ga*MjI0NzAxMTY1LjE3ODQ3ODg2ODI.*_ga_8JE65Q40S6*czE3ODU5MTMzNjQkbzkkZzEkdDE3ODU5MTY2MzYkajU5JGwwJGgw",
     location: "Mararikulam",
     capacity: "280 Guests",
     type: "Luxury Beach Resort",
