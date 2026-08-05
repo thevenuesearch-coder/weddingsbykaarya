@@ -33,12 +33,18 @@ export default function SignatureVenues({ venues = [] }) {
       const viewport = window.innerWidth;
 
       // exact distance to travel
-      const move = Math.max(0, totalWidth - viewport + 100);
+      const lastCard = trackRef.current.lastElementChild;
 
-      setMoveDistance(move);
+const move =
+  totalWidth -
+  viewport +
+  (lastCard?.clientWidth || 0) * 0.15;
+
+setMoveDistance(Math.max(0, move));
+
 
       // vertical height required
-      setSectionHeight(window.innerHeight + move);
+      setSectionHeight(window.innerHeight + move - 120);
     };
 
     calculate();
@@ -73,14 +79,14 @@ export default function SignatureVenues({ venues = [] }) {
         className="sticky overflow-hidden"
         style={{
           top: "95px",
-          height: "calc(100vh - 95px)",
+          height: "calc(100vh - 120px)",
         }}
       >
         <div className="flex flex-col h-full">
 
           {/* Heading */}
 
-          <div className="pt-8 pb-8 text-center flex-shrink-0">
+          <div className="pt-2 pb-4 text-center flex-shrink-0">
 
             <p
               className="uppercase tracking-[0.4em] text-xs"
@@ -92,7 +98,7 @@ export default function SignatureVenues({ venues = [] }) {
             </p>
 
             <h2
-              className="font-serif-display text-6xl mt-4"
+              className="font-serif-display text-6xl mt-2"
               style={{
                 color: "#F8F5EF",
               }}
@@ -101,7 +107,7 @@ export default function SignatureVenues({ venues = [] }) {
             </h2>
 
             <p
-              className="max-w-3xl mx-auto mt-6 text-lg leading-8"
+              className="max-w-3xl mx-auto mt-3 text-lg leading-8"
               style={{
                 color: "#E8DAC8",
               }}
@@ -113,17 +119,17 @@ export default function SignatureVenues({ venues = [] }) {
 
           {/* Cards */}
 
-          <div className="flex-1 flex items-center overflow-hidden">
+          <div className="flex-1 flex items-start overflow-hidden pt-2 pb-24">
 
             <motion.div
               ref={trackRef}
               style={{ x }}
-              className="flex gap-16 pl-[10vw] pr-[20vw] w-max"
+              className="flex gap-16 pl-[8vw] pr-[8vw] w-max"
             >
               {venues.map((venue) => (
                 <motion.div
                   key={venue.name}
-                  className="w-[520px] shrink-0"
+                  className="w-[450px] shrink-0"
                   whileHover={{
                     y: -18,
                     rotateY: 5,
@@ -139,26 +145,33 @@ export default function SignatureVenues({ venues = [] }) {
                   }}
                 >
                   <div
-                    className="overflow-hidden rounded-[32px]"
-                    style={{
-                      border: "1px solid rgba(201,164,107,.18)",
-                    }}
-                  >
+  className="overflow-hidden rounded-[26px]"
+  style={{
+    border: "1px solid rgba(201,164,107,.18)",
+    aspectRatio: "16 / 10",
+    background: "#3F1721",
+  }}
+>
                     <motion.img
-                      src={venue.image}
-                      alt={venue.name}
-                      loading="lazy"
-                      className="w-full h-[430px] object-cover"
-                      whileHover={{
-                        scale: 1.08,
-                      }}
-                      transition={{
-                        duration: 0.8,
-                      }}
-                    />
+    src={venue.image}
+    alt={venue.name}
+    loading="lazy"
+    className="
+        w-full
+        h-full
+        object-cover
+        object-center
+    "
+    whileHover={{
+        scale: 1.08,
+    }}
+    transition={{
+        duration: 0.8,
+    }}
+/>
                   </div>
 
-                  <div className="mt-6 pb-6">
+                  <div className="mt-5 pb-10">
 
                     <p
                       className="uppercase tracking-[0.3em] text-xs"
@@ -217,7 +230,7 @@ export default function SignatureVenues({ venues = [] }) {
 
           {/* Progress Bar */}
 
-          <div className="pb-6 flex justify-center flex-shrink-0">
+          <div className="pt-4 pb-10 flex justify-center flex-shrink-0">
 
             <div
               className="w-80 h-[2px]"

@@ -2,187 +2,171 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, MapPin, Users } from "lucide-react";
 
 export default function VenueModal({
-    venue,
-    open,
-    onClose,
+  venue,
+  open,
+  onClose,
 }) {
+  return (
+    <AnimatePresence>
+      {open && venue && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={onClose}
+          className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-xl flex items-center justify-center p-6 lg:p-10"
+        >
+          <motion.div
+            initial={{
+              opacity: 0,
+              scale: 0.96,
+              y: 40,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              y: 0,
+            }}
+            exit={{
+              opacity: 0,
+              scale: 0.96,
+              y: 40,
+            }}
+            transition={{
+              duration: 0.45,
+            }}
+            onClick={(e) => e.stopPropagation()}
+            className="w-full max-w-[1500px] h-[90vh] rounded-[34px] overflow-hidden"
+            style={{
+              background: "#552230",
+            }}
+          >
+            <div className="grid lg:grid-cols-[1.15fr_0.85fr] h-full">
 
-    return (
+              {/* IMAGE */}
 
-        <AnimatePresence>
+              <div className="relative h-full overflow-hidden">
 
-            {open && venue && (
+                <img
+                  src={venue.image}
+                  alt={venue.name}
+                  className="w-full h-full object-cover object-center"
+                />
 
-                <motion.div
+              </div>
 
-                    initial={{opacity:0}}
+              {/* CONTENT */}
 
-                    animate={{opacity:1}}
+              <div className="flex flex-col h-full p-14">
 
-                    exit={{opacity:0}}
+                {/* CLOSE */}
 
-                    className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-md flex items-center justify-center p-8"
+                <div className="flex justify-end">
 
+                  <button
                     onClick={onClose}
+                    className="rounded-full p-2 hover:bg-white/10 transition"
+                  >
+                    <X color="#C9A46B" size={28} />
+                  </button>
 
-                >
+                </div>
 
-                    <motion.div
+                {/* TOP CONTENT */}
 
-                        initial={{
-                            y:60,
-                            opacity:0,
-                            scale:.96
-                        }}
+                <div>
 
-                        animate={{
-                            y:0,
-                            opacity:1,
-                            scale:1
-                        }}
+                  <p
+                    className="uppercase tracking-[0.35em] text-xs"
+                    style={{
+                      color: "#C9A46B",
+                    }}
+                  >
+                    {venue.type}
+                  </p>
 
-                        exit={{
-                            y:60,
-                            opacity:0
-                        }}
+                  <h2
+                    className="font-serif-display text-6xl mt-4 leading-tight"
+                    style={{
+                      color: "#F8F5EF",
+                    }}
+                  >
+                    {venue.name}
+                  </h2>
 
-                        transition={{
-                            duration:.45
-                        }}
+                  <p
+                    className="mt-8 text-lg leading-9"
+                    style={{
+                      color: "#E8DAC8",
+                    }}
+                  >
+                    {venue.description}
+                  </p>
 
-                        onClick={(e)=>e.stopPropagation()}
+                  <div className="space-y-6 mt-12">
 
-                        className="w-full max-w-6xl overflow-hidden rounded-[34px]"
+                    <div className="flex items-center gap-4">
 
+                      <MapPin
+                        size={24}
+                        color="#C9A46B"
+                      />
+
+                      <span
+                        className="text-lg"
                         style={{
-                            background:"#552230"
+                          color: "#E8DAC8",
                         }}
+                      >
+                        {venue.location}
+                      </span>
 
-                    >
+                    </div>
 
-                        <div className="grid lg:grid-cols-2">
+                    <div className="flex items-center gap-4">
 
-                            <img
+                      <Users
+                        size={24}
+                        color="#C9A46B"
+                      />
 
-                                src={venue.image}
+                      <span
+                        className="text-lg"
+                        style={{
+                          color: "#E8DAC8",
+                        }}
+                      >
+                        {venue.capacity}
+                      </span>
 
-                                alt={venue.name}
+                    </div>
 
-                                className="w-full h-full object-cover min-h-[650px]"
+                  </div>
 
-                            />
+                </div>
 
-                            <div className="p-16">
+                {/* Push Button to Bottom */}
 
-                                <button
+                <div className="flex-1" />
 
-                                    onClick={onClose}
+                {/* BUTTON */}
 
-                                    className="ml-auto mb-12 block"
+                <button
+                  className="w-full py-5 uppercase tracking-[0.35em] text-sm transition-all duration-500 hover:bg-[#C9A46B] hover:text-[#4E1E27]"
+                  style={{
+                    border: "1px solid #C9A46B",
+                    color: "#C9A46B",
+                  }}
+                >
+                  Book This Venue
+                </button>
 
-                                >
+              </div>
 
-                                    <X color="#C9A46B"/>
-
-                                </button>
-
-                                <p
-
-                                    className="uppercase tracking-[.35em] text-xs"
-
-                                    style={{
-                                        color:"#C9A46B"
-                                    }}
-
-                                >
-
-                                    {venue.type}
-
-                                </p>
-
-                                <h2
-
-                                    className="font-serif-display text-5xl mt-4"
-
-                                    style={{
-                                        color:"#F8F5EF"
-                                    }}
-
-                                >
-
-                                    {venue.name}
-
-                                </h2>
-
-                                <p
-
-                                    className="mt-8 leading-8"
-
-                                    style={{
-                                        color:"#E8DAC8"
-                                    }}
-
-                                >
-
-                                    {venue.description}
-
-                                </p>
-
-                                <div className="space-y-5 mt-12">
-
-                                    <div className="flex gap-3 items-center">
-
-                                        <MapPin color="#C9A46B"/>
-
-                                        <span style={{color:"#E8DAC8"}}>
-
-                                            {venue.location}
-
-                                        </span>
-
-                                    </div>
-
-                                    <div className="flex gap-3 items-center">
-
-                                        <Users color="#C9A46B"/>
-
-                                        <span style={{color:"#E8DAC8"}}>
-
-                                            {venue.capacity}
-
-                                        </span>
-
-                                    </div>
-
-                                </div>
-
-                                <button
-
-                                    className="mt-14 px-10 py-4 uppercase tracking-[.3em]"
-
-                                    style={{
-                                        border:"1px solid #C9A46B",
-                                        color:"#C9A46B"
-                                    }}
-
-                                >
-
-                                    Book this Venue
-
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </motion.div>
-
-                </motion.div>
-
-            )}
-
-        </AnimatePresence>
-
-    );
-
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
 }
