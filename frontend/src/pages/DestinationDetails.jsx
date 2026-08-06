@@ -94,7 +94,7 @@ if (!destination) {
       {/* ================= OVERVIEW ================= */}
 
       <section
-        className="py-24"
+        className="relative py-32 mt-50"
         style={{ background: "#4E1E27" }}
       >
 
@@ -208,14 +208,20 @@ if (!destination) {
         </p>
 
         <button
-          className="mt-12 px-10 py-4 uppercase tracking-[0.3em]"
-          style={{
-            border: "1px solid #C9A46B",
-            color: "#C9A46B",
-          }}
-        >
-          Book a Free Consultation
-        </button>
+    onClick={() =>
+        window.open(
+            "https://calendly.com/weddingsbykaarya/weddingsbykaarya-consultation-call",
+            "_blank"
+        )
+    }
+    className="px-14 py-5 uppercase tracking-[0.35em] transition-all duration-300 hover:scale-105"
+    style={{
+        border: "1px solid #C9A46B",
+        color: "#C9A46B",
+    }}
+>
+    Book a Free Consultation
+</button>
 
       </section>
 

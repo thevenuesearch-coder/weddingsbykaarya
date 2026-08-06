@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X, MapPin, Users } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function VenueModal({
   venue,
@@ -13,13 +14,14 @@ export default function VenueModal({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-md flex items-center justify-center p-6 lg:p-10"
           onClick={onClose}
-          className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-xl flex items-center justify-center p-6 lg:p-10"
         >
           <motion.div
             initial={{
               opacity: 0,
-              scale: 0.96,
+              scale: 0.95,
               y: 40,
             }}
             animate={{
@@ -29,137 +31,131 @@ export default function VenueModal({
             }}
             exit={{
               opacity: 0,
-              scale: 0.96,
+              scale: 0.95,
               y: 40,
             }}
             transition={{
-              duration: 0.45,
+              duration: 0.4,
             }}
             onClick={(e) => e.stopPropagation()}
-            className="w-full max-w-[1500px] h-[90vh] rounded-[34px] overflow-hidden"
+            className="relative w-full max-w-5xl rounded-[28px] overflow-hidden shadow-2xl max-h-[88vh]"
             style={{
               background: "#552230",
             }}
           >
-            <div className="grid lg:grid-cols-[1.15fr_0.85fr] h-full">
+            <div className="grid lg:grid-cols-[1.1fr_0.9fr] h-full">
 
-              {/* IMAGE */}
+              {/* Image Section */}
 
-              <div className="relative h-full overflow-hidden">
-
+              <div className="relative bg-black">
                 <img
                   src={venue.image}
                   alt={venue.name}
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full min-h-[520px] max-h-[88vh] object-cover"
                 />
-
               </div>
 
-              {/* CONTENT */}
+              {/* Content */}
 
-              <div className="flex flex-col h-full p-14">
+              <div className="relative overflow-y-auto p-8 lg:p-12">
 
-                {/* CLOSE */}
+                <button
+                  onClick={onClose}
+                  className="absolute top-6 right-6 transition hover:rotate-90"
+                >
+                  <X size={28} color="#C9A46B" />
+                </button>
 
-                <div className="flex justify-end">
+                <p
+                  className="uppercase tracking-[0.35em] text-xs"
+                  style={{
+                    color: "#C9A46B",
+                  }}
+                >
+                  {venue.type}
+                </p>
 
-                  <button
-                    onClick={onClose}
-                    className="rounded-full p-2 hover:bg-white/10 transition"
-                  >
-                    <X color="#C9A46B" size={28} />
-                  </button>
+                <h2
+                  className="font-serif-display text-4xl lg:text-5xl mt-4 leading-tight"
+                  style={{
+                    color: "#F8F5EF",
+                  }}
+                >
+                  {venue.name}
+                </h2>
 
-                </div>
+                <p
+                  className="mt-6 leading-8 text-lg"
+                  style={{
+                    color: "#E8DAC8",
+                  }}
+                >
+                  {venue.description}
+                </p>
 
-                {/* TOP CONTENT */}
+                <div className="space-y-6 mt-10">
 
-                <div>
+                  <div className="flex items-center gap-4">
 
-                  <p
-                    className="uppercase tracking-[0.35em] text-xs"
-                    style={{
-                      color: "#C9A46B",
-                    }}
-                  >
-                    {venue.type}
-                  </p>
+                    <MapPin
+                      size={22}
+                      color="#C9A46B"
+                    />
 
-                  <h2
-                    className="font-serif-display text-6xl mt-4 leading-tight"
-                    style={{
-                      color: "#F8F5EF",
-                    }}
-                  >
-                    {venue.name}
-                  </h2>
+                    <span
+                      className="text-lg"
+                      style={{
+                        color: "#E8DAC8",
+                      }}
+                    >
+                      {venue.location}
+                    </span>
 
-                  <p
-                    className="mt-8 text-lg leading-9"
-                    style={{
-                      color: "#E8DAC8",
-                    }}
-                  >
-                    {venue.description}
-                  </p>
+                  </div>
 
-                  <div className="space-y-6 mt-12">
+                  <div className="flex items-center gap-4">
 
-                    <div className="flex items-center gap-4">
+                    <Users
+                      size={22}
+                      color="#C9A46B"
+                    />
 
-                      <MapPin
-                        size={24}
-                        color="#C9A46B"
-                      />
-
-                      <span
-                        className="text-lg"
-                        style={{
-                          color: "#E8DAC8",
-                        }}
-                      >
-                        {venue.location}
-                      </span>
-
-                    </div>
-
-                    <div className="flex items-center gap-4">
-
-                      <Users
-                        size={24}
-                        color="#C9A46B"
-                      />
-
-                      <span
-                        className="text-lg"
-                        style={{
-                          color: "#E8DAC8",
-                        }}
-                      >
-                        {venue.capacity}
-                      </span>
-
-                    </div>
+                    <span
+                      className="text-lg"
+                      style={{
+                        color: "#E8DAC8",
+                      }}
+                    >
+                      {venue.capacity}
+                    </span>
 
                   </div>
 
                 </div>
 
-                {/* Push Button to Bottom */}
-
-                <div className="flex-1" />
-
-                {/* BUTTON */}
-
                 <button
-                  className="w-full py-5 uppercase tracking-[0.35em] text-sm transition-all duration-500 hover:bg-[#C9A46B] hover:text-[#4E1E27]"
-                  style={{
-                    border: "1px solid #C9A46B",
-                    color: "#C9A46B",
-                  }}
-                >
-                  Book This Venue
-                </button>
+    onClick={() => {
+        onClose();
+
+        setTimeout(() => {
+            const section = document.getElementById("contact");
+
+            if (section) {
+                section.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            }
+        }, 300);
+    }}
+    className="mt-14 px-10 py-4 uppercase tracking-[.3em] transition-all duration-300 hover:scale-105"
+    style={{
+        border: "1px solid #C9A46B",
+        color: "#C9A46B",
+    }}
+>
+    Drop Your Enquiry
+</button>
 
               </div>
 

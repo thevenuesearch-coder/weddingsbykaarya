@@ -77,7 +77,7 @@ export default function About() {
 
     {[
       {
-        number: "500+",
+        number: "250+",
         label: "WEDDINGS PLANNED",
       },
       {
@@ -85,7 +85,7 @@ export default function About() {
         label: "DESTINATIONS",
       },
       {
-        number: "150+",
+        number: "450+",
         label: "LUXURY VENUES",
       },
       {
