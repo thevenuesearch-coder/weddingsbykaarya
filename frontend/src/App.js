@@ -28,8 +28,8 @@ function HomePage({ showFooter }) {
   return (
     <Suspense fallback={null}>
       <Gallery />
-      <Testimonials />
       <Destinations />
+      <Testimonials />
       <FAQ />
       <Contact />
       <AnimatePresence>{showFooter && <Footer />}</AnimatePresence>
