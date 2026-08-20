@@ -27,12 +27,12 @@ const DestinationDetails = lazy(() => import("@/pages/DestinationDetails"));
 function HomePage() {
   return (
     <Suspense fallback={null}>
+      <About />
       <Gallery />
       <Destinations />
       <Testimonials />
       <FAQ />
       <Contact />
-      <About />
       <Footer />
     </Suspense>
   );
