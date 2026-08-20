@@ -1,6 +1,5 @@
 import { lazy, Suspense, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
 import "@/App.css";
 import { Toaster } from "sonner";
 
@@ -34,9 +33,7 @@ function HomePage() {
       <FAQ />
       <Contact />
       <About />
-      <AnimatePresence>
-        <Footer />
-      </AnimatePresence>
+      <Footer />
     </Suspense>
   );
 }
