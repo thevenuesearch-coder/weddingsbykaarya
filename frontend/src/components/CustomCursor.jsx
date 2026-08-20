@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
+const CURSOR_VIDEO = "https://videos.pexels.com/video-files/35222226/14921684_640_360_50fps.mp4";
 const lerp = (a, b, n) => a + (b - a) * n;
 
 export default function CustomCursor() {
@@ -14,16 +15,26 @@ export default function CustomCursor() {
   const stateRef = useRef(state);
   stateRef.current = state;
 
-  // Ensure the reveal video is muted and playing
   useEffect(() => {
-    if (videoEl.current) {
-      videoEl.current.muted = true;
-      const p = videoEl.current.play();
-      if (p && p.catch) p.catch(() => {});
+    if (!enabled || !videoEl.current) return;
+
+    const video = videoEl.current;
+    const load = () => {
+      video.src = CURSOR_VIDEO;
+      video.load();
+      const play = video.play();
+      if (play && play.catch) play.catch(() => {});
+    };
+
+    if ("requestIdleCallback" in window) {
+      const id = window.requestIdleCallback(load, { timeout: 2500 });
+      return () => window.cancelIdleCallback(id);
     }
+
+    const timer = window.setTimeout(load, 1500);
+    return () => window.clearTimeout(timer);
   }, [enabled]);
 
-  // Enable only on fine-pointer (desktop) devices
   useEffect(() => {
     const mq = window.matchMedia("(hover: hover) and (pointer: fine)");
     if (!mq.matches) return;
@@ -56,8 +67,7 @@ export default function CustomCursor() {
     const classify = (t) => {
       if (!t || !t.closest) return { type: "default", label: "", shimmer: false, lotus: false };
       const shimmer = !!t.closest("[data-cursor-shimmer]");
-      if (t.closest('input, textarea, select, [contenteditable="true"]'))
-        return { type: "text", label: "", shimmer, lotus: false };
+      if (t.closest('input, textarea, select, [contenteditable="true"]')) return { type: "text", label: "", shimmer, lotus: false };
       const imgEl = t.closest('img, [data-cursor="image"]');
       if (imgEl) {
         const holder = t.closest("[data-cursor-label]");
@@ -72,16 +82,13 @@ export default function CustomCursor() {
     const onOver = (e) => {
       const next = classify(e.target);
       const cur = stateRef.current;
-      if (next.type !== cur.type || next.label !== cur.label || next.shimmer !== cur.shimmer || next.lotus !== cur.lotus) {
-        setState(next);
-      }
+      if (next.type !== cur.type || next.label !== cur.label || next.shimmer !== cur.shimmer || next.lotus !== cur.lotus) setState(next);
     };
 
     const onDown = () => {
       const p = pulseEl.current;
       if (!p) return;
       p.classList.remove("go");
-      // force reflow to restart animation
       void p.offsetWidth;
       p.classList.add("go");
     };
@@ -98,7 +105,6 @@ export default function CustomCursor() {
       if (ringRoot.current) ringRoot.current.style.transform = `translate3d(${ring.x}px, ${ring.y}px, 0)`;
       if (dotRoot.current) dotRoot.current.style.transform = `translate3d(${dot.x}px, ${dot.y}px, 0)`;
 
-      // Foil sheen follows movement direction (hero only)
       if (ringEl.current && stateRef.current.shimmer) {
         const dx = mouse.x - prev.x;
         const dy = mouse.y - prev.y;
@@ -109,7 +115,6 @@ export default function CustomCursor() {
       }
       prev.x = mouse.x;
       prev.y = mouse.y;
-
       raf = requestAnimationFrame(render);
     };
 
@@ -134,16 +139,7 @@ export default function CustomCursor() {
     <>
       <div ref={ringRoot} className="kaarya-cur-root" aria-hidden="true">
         <div ref={ringEl} className="kaarya-cur-ring" data-state={state.type} data-shimmer={state.shimmer ? 1 : 0} data-hero={heroReveal ? 1 : 0} />
-        <video
-          ref={videoEl}
-          className="kaarya-cur-video"
-          data-reveal={heroReveal ? 1 : 0}
-          src="https://videos.pexels.com/video-files/35222226/14921684_640_360_50fps.mp4"
-          muted
-          loop
-          playsInline
-          preload="auto"
-        />
+        <video ref={videoEl} className="kaarya-cur-video" data-reveal={heroReveal ? 1 : 0} muted loop playsInline preload="none" aria-hidden="true" />
         <span ref={pulseEl} className="kaarya-cur-pulse" />
         <span className="kaarya-cur-label" data-show={state.type === "image" ? 1 : 0}>{state.label}</span>
         <svg className="kaarya-cur-lotus" data-show={state.lotus ? 1 : 0} viewBox="0 0 40 28" fill="none" stroke="#C9A46B" strokeWidth="1">
