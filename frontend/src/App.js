@@ -15,10 +15,11 @@ import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 
 const Gallery = lazy(() => import("@/components/Gallery"));
-const Testimonials = lazy(() => import("@/components/Testimonials"));
 const Destinations = lazy(() => import("@/components/Destinations"));
+const Testimonials = lazy(() => import("@/components/Testimonials"));
 const FAQ = lazy(() => import("@/components/FAQ"));
 const Contact = lazy(() => import("@/components/Contact"));
+const About = lazy(() => import("@/components/About"));
 const Footer = lazy(() => import("@/components/Footer"));
 
 const WeddingJourney = lazy(() => import("@/pages/WeddingJourney"));
@@ -32,6 +33,10 @@ function HomePage({ showFooter }) {
       <Testimonials />
       <FAQ />
       <Contact />
+
+      {/* About / The Studio — placed below the main homepage content */}
+      <About />
+
       <AnimatePresence>{showFooter && <Footer />}</AnimatePresence>
     </Suspense>
   );
