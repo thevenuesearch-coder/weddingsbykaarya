@@ -33,7 +33,6 @@ function DestinationPanel({ d, index }) {
   const scaleImg = useTransform(scrollYProgress, [0, 1], [1.25, 1.05]);
   const yNum = useTransform(scrollYProgress, [0, 1], ["40%", "-40%"]);
 
-  // 3D tilt
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
   const rX = useSpring(useTransform(my, [-0.5, 0.5], [8, -8]), { stiffness: 150, damping: 18 });
@@ -46,7 +45,6 @@ function DestinationPanel({ d, index }) {
   };
   const onLeave = () => { mx.set(0); my.set(0); };
 
-  const left = index % 2 === 0;
   const chips = [
     { icon: CalendarDays, label: d.season },
     { icon: Sparkles, label: d.vibe },
@@ -55,58 +53,68 @@ function DestinationPanel({ d, index }) {
 
   return (
     <div ref={ref} data-testid={`destination-${index}`} className="relative py-16 md:py-24">
-      <div className={`mx-auto max-w-[1400px] px-6 md:px-10 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center ${left ? "" : "lg:[direction:rtl]"}`}>
-        {/* Image with 3D tilt + parallax */}
-        <div className="lg:col-span-7 [direction:ltr]" style={{ perspective: 1200 }} data-cursor-label="VIEW">
+      <div className="mx-auto max-w-[1400px] px-6 md:px-10 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        {/* Every destination keeps the same layout: video/media on the left, details on the right. */}
+        <div className="lg:col-span-7" style={{ perspective: 1200 }} data-cursor-label="VIEW">
           <motion.div
             onClick={() => {
-  if (window.__lenis) {
-    window.__lenis.scrollTo(0, {
-      immediate: true,
-      force: true,
-    });
-  }
-
-  window.scrollTo(0, 0);
-
-  navigate(`/destination/${d.slug}`);
-}}
+              if (window.__lenis) {
+                window.__lenis.scrollTo(0, { immediate: true, force: true });
+              }
+              window.scrollTo(0, 0);
+              navigate(`/destination/${d.slug}`);
+            }}
           >
-            <div className="relative overflow-hidden cursor-pointer" style={{ border: "1px solid rgba(201,164,107,0.3)" }}>
-             <motion.video
-    src={d.video}
-    autoPlay
-    muted
-    loop
-    playsInline
-    preload="auto"
-    className="w-full h-[420px] md:h-[560px] object-cover"
-    style={{
-        y: yImg,
-        scale: scaleImg,
-    }}
-/>
-              
-              {/* Floating tag chip (3D lift) */}
-              <div style={{ transform: "translateZ(40px)" }} className="absolute bottom-5 left-5 px-4 py-2" data-testid={`destination-tag-${index}`}>
-                <span className="text-[0.7rem] tracking-[0.3em] uppercase" style={{ color: "#C9A46B" }}>{d.tag}</span>
+            <div
+              className="relative overflow-hidden cursor-pointer"
+              style={{ border: "1px solid rgba(201,164,107,0.3)" }}
+            >
+              <motion.video
+                src={d.video}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                className="w-full h-[420px] md:h-[560px] object-cover"
+                style={{ y: yImg, scale: scaleImg }}
+              />
+
+              <div
+                style={{ transform: "translateZ(40px)" }}
+                className="absolute bottom-5 left-5 px-4 py-2"
+                data-testid={`destination-tag-${index}`}
+              >
+                <span className="text-[0.7rem] tracking-[0.3em] uppercase" style={{ color: "#C9A46B" }}>
+                  {d.tag}
+                </span>
               </div>
             </div>
           </motion.div>
         </div>
 
-        {/* Text */}
-        <div className="lg:col-span-5 [direction:ltr] relative" data-cursor="dash">
-          <motion.span style={{ y: yNum }} className="absolute -top-24 right-0 font-serif-display leading-none pointer-events-none select-none text-outline-gold text-[9rem] md:text-[13rem] opacity-40">
+        <div className="lg:col-span-5 relative" data-cursor="dash">
+          <motion.span
+            style={{ y: yNum }}
+            className="absolute -top-24 right-0 font-serif-display leading-none pointer-events-none select-none text-outline-gold text-[9rem] md:text-[13rem] opacity-40"
+          >
             {String(index + 1).padStart(2, "0")}
           </motion.span>
+
           <Reveal className="relative">
             <div className="flex items-center gap-2 mb-4">
               <MapPin size={16} color="#C9A46B" strokeWidth={1.5} />
               <span className="text-xs tracking-[0.3em] uppercase" style={{ color: "#E8DAC8" }}>{d.country}</span>
             </div>
-            <h3 className="font-serif-display font-light text-5xl md:text-7xl leading-none mb-5" style={{ color: "#F8F5EF" }}>{d.name}</h3>
-            <p className="text-sm md:text-base leading-relaxed font-light mb-8 max-w-md" style={{ color: "#E8DAC8" }}>{d.insight}</p>
+
+            <h3 className="font-serif-display font-light text-5xl md:text-7xl leading-none mb-5" style={{ color: "#F8F5EF" }}>
+              {d.name}
+            </h3>
+
+            <p className="text-sm md:text-base leading-relaxed font-light mb-8 max-w-md" style={{ color: "#E8DAC8" }}>
+              {d.insight}
+            </p>
+
             <div className="space-y-3">
               {chips.map((c) => (
                 <div key={c.label} className="flex items-center gap-3 py-2" style={{ borderBottom: "1px solid rgba(201,164,107,0.18)" }}>
@@ -115,6 +123,7 @@ function DestinationPanel({ d, index }) {
                 </div>
               ))}
             </div>
+
             <button
               data-testid={`destination-enquire-${index}`}
               onClick={() => {
