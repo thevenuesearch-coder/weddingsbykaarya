@@ -52,11 +52,7 @@
               "addressRegion": "Telangana",
               "addressCountry": "IN"
             },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": 17.4239,
-              "longitude": 78.4738
-            },
+            "geo": { "@type": "GeoCoordinates", "latitude": 17.4239, "longitude": 78.4738 },
             "areaServed": ["Hyderabad", "Udaipur", "Jaipur", "Jodhpur", "Goa", "Kerala", "Rajasthan", "Bali", "Phuket", "Maldives", "Sri Lanka", "Dubai"],
             "sameAs": ["https://www.instagram.com/"]
           },
@@ -79,18 +75,21 @@
     <script>
       window.addEventListener("load", function () {
         var loadAnalytics = function () {
-          var script = document.createElement("script");
-          script.src = "https://assets.emergent.sh/scripts/emergent-main.js";
-          script.async = true;
-          document.head.appendChild(script);
-
           window.posthog = window.posthog || [];
-          window.posthog.push(["init", "phc_DbsPb39SRc8z3EiQ6Dhj6ikv4H4rTKcht9d4sZSesceP", {
-            api_host: "https://ap.emergent.sh",
-            person_profiles: "identified_only",
-            session_recording: { recordCrossOriginIframes: true },
-            capturePerformance: false
-          }]);
+          var script = document.createElement("script");
+          script.src = "https://ap.emergent.sh/static/array.js";
+          script.async = true;
+          script.onload = function () {
+            if (window.posthog && typeof window.posthog.init === "function") {
+              window.posthog.init("phc_DbsPb39SRc8z3EiQ6Dhj6ikv4H4rTKcht9d4sZSesceP", {
+                api_host: "https://ap.emergent.sh",
+                person_profiles: "identified_only",
+                session_recording: { recordCrossOriginIframes: true },
+                capturePerformance: false
+              });
+            }
+          };
+          document.head.appendChild(script);
         };
 
         if ("requestIdleCallback" in window) {
