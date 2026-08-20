@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import "@/App.css";
@@ -13,30 +13,27 @@ import ScrollToTop from "@/components/ScrollToTop";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
-import Destinations from "@/components/Destinations";
-import Gallery from "@/components/Gallery";
-import Testimonials from "@/components/Testimonials";
-import FAQ from "@/components/FAQ";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
 
-import WeddingJourney from "@/pages/WeddingJourney";
-import DestinationDetails from "@/pages/DestinationDetails";
+const Gallery = lazy(() => import("@/components/Gallery"));
+const Testimonials = lazy(() => import("@/components/Testimonials"));
+const Destinations = lazy(() => import("@/components/Destinations"));
+const FAQ = lazy(() => import("@/components/FAQ"));
+const Contact = lazy(() => import("@/components/Contact"));
+const Footer = lazy(() => import("@/components/Footer"));
+
+const WeddingJourney = lazy(() => import("@/pages/WeddingJourney"));
+const DestinationDetails = lazy(() => import("@/pages/DestinationDetails"));
 
 function HomePage({ showFooter }) {
   return (
-    <>
-      <Hero />
-      <Marquee />
+    <Suspense fallback={null}>
       <Gallery />
       <Testimonials />
       <Destinations />
       <FAQ />
       <Contact />
-      <AnimatePresence>
-        {showFooter && <Footer />}
-      </AnimatePresence>
-    </>
+      <AnimatePresence>{showFooter && <Footer />}</AnimatePresence>
+    </Suspense>
   );
 }
 
@@ -99,7 +96,16 @@ function App() {
         }}
       >
         <Routes>
-          <Route path="/" element={<HomePage showFooter={showFooter} />} />
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <Marquee />
+                <HomePage showFooter={showFooter} />
+              </>
+            }
+          />
           <Route path="/journey" element={<WeddingJourney />} />
           <Route path="/wedding-journey" element={<WeddingJourney />} />
           <Route path="/destination/:slug" element={<DestinationDetails />} />
