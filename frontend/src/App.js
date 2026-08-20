@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import "@/App.css";
@@ -25,53 +25,26 @@ const Footer = lazy(() => import("@/components/Footer"));
 const WeddingJourney = lazy(() => import("@/pages/WeddingJourney"));
 const DestinationDetails = lazy(() => import("@/pages/DestinationDetails"));
 
-function HomePage({ showFooter }) {
+function HomePage() {
   return (
     <Suspense fallback={null}>
-      <About />
       <Gallery />
       <Destinations />
       <Testimonials />
       <FAQ />
       <Contact />
-      {/* About / The Studio — placed below the main homepage content */}
-    
-
-      <AnimatePresence>{showFooter && <Footer />}</AnimatePresence>
+      <About />
+      <AnimatePresence>
+        <Footer />
+      </AnimatePresence>
     </Suspense>
   );
 }
 
 function App() {
-  const [showFooter, setShowFooter] = useState(false);
-  const [loaded, setLoaded] = useState(false);
+  const [loaded, setLoaded] = require("react").useState(false);
 
   useLenis();
-
-  useEffect(() => {
-    let frame = 0;
-
-    const handleScroll = () => {
-      if (frame) return;
-
-      frame = window.requestAnimationFrame(() => {
-        frame = 0;
-        const hero = document.getElementById("hero");
-        if (!hero) return;
-
-        const heroBottom = hero.offsetTop + hero.offsetHeight;
-        setShowFooter(window.scrollY > heroBottom + 180);
-      });
-    };
-
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      if (frame) window.cancelAnimationFrame(frame);
-    };
-  }, []);
 
   return (
     <div className="App grain" data-testid="app-root">
@@ -107,7 +80,7 @@ function App() {
               <>
                 <Hero />
                 <Marquee />
-                <HomePage showFooter={showFooter} />
+                <HomePage />
               </>
             }
           />
