@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
@@ -9,15 +8,13 @@ import useLenis from "@/hooks/useLenis";
 
 import Loader from "@/components/Loader";
 import CustomCursor from "@/components/CustomCursor";
-import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
 
+import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
 import Marquee from "@/components/Marquee";
 import Destinations from "@/components/Destinations";
 import Gallery from "@/components/Gallery";
-import Journey from "@/components/Journey";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
@@ -30,7 +27,6 @@ function HomePage({ showFooter }) {
   return (
     <>
       <Hero />
-      <About />
       <Marquee />
       <Gallery />
       <Testimonials />
@@ -51,21 +47,28 @@ function App() {
   useLenis();
 
   useEffect(() => {
+    let frame = 0;
+
     const handleScroll = () => {
-      const hero = document.getElementById("hero");
+      if (frame) return;
 
-      if (!hero) return;
+      frame = window.requestAnimationFrame(() => {
+        frame = 0;
+        const hero = document.getElementById("hero");
+        if (!hero) return;
 
-      const heroBottom = hero.offsetTop + hero.offsetHeight;
-
-      setShowFooter(window.scrollY > heroBottom + 180);
+        const heroBottom = hero.offsetTop + hero.offsetHeight;
+        setShowFooter(window.scrollY > heroBottom + 180);
+      });
     };
 
-    window.addEventListener("scroll", handleScroll);
-
     handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
   }, []);
 
   return (
@@ -89,9 +92,6 @@ function App() {
 
       <Header />
 
-      {/* Automatically scrolls to top on every route change */}
-      <ScrollToTop />
-
       <main
         style={{
           opacity: loaded ? 1 : 0,
@@ -99,26 +99,10 @@ function App() {
         }}
       >
         <Routes>
-
-          <Route
-            path="/journey"
-            element={<WeddingJourney />}
-          />
-
-          <Route
-            path="/"
-            element={<HomePage showFooter={showFooter} />}
-          />
-
-          <Route
-            path="/wedding-journey"
-            element={<WeddingJourney />}
-          />
-
-          <Route
-            path="/destination/:slug"
-            element={<DestinationDetails />}
-          />
+          <Route path="/" element={<HomePage showFooter={showFooter} />} />
+          <Route path="/journey" element={<WeddingJourney />} />
+          <Route path="/wedding-journey" element={<WeddingJourney />} />
+          <Route path="/destination/:slug" element={<DestinationDetails />} />
         </Routes>
       </main>
     </div>
