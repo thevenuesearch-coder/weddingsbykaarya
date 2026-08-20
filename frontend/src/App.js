@@ -28,14 +28,14 @@ const DestinationDetails = lazy(() => import("@/pages/DestinationDetails"));
 function HomePage({ showFooter }) {
   return (
     <Suspense fallback={null}>
+      <About />
       <Gallery />
       <Destinations />
       <Testimonials />
       <FAQ />
       <Contact />
-
       {/* About / The Studio — placed below the main homepage content */}
-      <About />
+    
 
       <AnimatePresence>{showFooter && <Footer />}</AnimatePresence>
     </Suspense>
