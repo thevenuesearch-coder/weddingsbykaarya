@@ -22,7 +22,7 @@ export default function Gallery() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
-              transition={{  duration: 0.55,  ease: [0.22, 1, 0.36, 1],}}
+              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
               data-testid={`gallery-item-${i}`}
               data-cursor-label="View"
               className="group relative mb-5 md:mb-6 overflow-hidden break-inside-avoid"
@@ -32,6 +32,11 @@ export default function Gallery() {
                 src={g.src}
                 alt={g.alt}
                 loading="lazy"
+                decoding="async"
+                fetchPriority="low"
+                width={g.tall ? 900 : 700}
+                height={g.tall ? 1200 : 900}
+                sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
                 className={`w-full object-cover grayscale transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-105 ${g.tall ? "h-[520px]" : "h-[360px]"}`}
               />
               <figcaption className="absolute inset-x-0 bottom-0 p-5 opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500" style={{ background: "linear-gradient(to top, rgba(78,30,39,0.9), transparent)" }}>
@@ -42,22 +47,14 @@ export default function Gallery() {
         </div>
       </div>
       <div className="mt-16 flex justify-end">
-       <button
-  onClick={() =>
-    window.open(
-      "https://calendly.com/weddingsbykaarya/weddingsbykaarya-consultation-call",
-      "_blank"
-    )
-  }
-  className="px-10 py-4 uppercase tracking-[0.32em] text-xs transition-all duration-500 hover:tracking-[0.4em]"
-  style={{
-    border: "1px solid #C9A46B",
-    color: "#C9A46B",
-  }}
->
-  Book a Discovery Free Call
-</button>
-    </div>
+        <button
+          onClick={() => window.open("https://calendly.com/weddingsbykaarya/weddingsbykaarya-consultation-call", "_blank", "noopener,noreferrer")}
+          className="px-10 py-4 uppercase tracking-[0.32em] text-xs transition-all duration-500 hover:tracking-[0.4em]"
+          style={{ border: "1px solid #C9A46B", color: "#C9A46B" }}
+        >
+          Book a Discovery Free Call
+        </button>
+      </div>
     </section>
   );
 }
