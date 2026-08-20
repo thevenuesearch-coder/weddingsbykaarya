@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import "@/App.css";
@@ -42,7 +42,7 @@ function HomePage() {
 }
 
 function App() {
-  const [loaded, setLoaded] = require("react").useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   useLenis();
 
