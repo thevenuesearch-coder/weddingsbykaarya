@@ -1,6 +1,6 @@
 // Curated luxury Indian wedding imagery + site content
 
-export const IMAGES = {
+export const IMAGES = { 
   heroPalace: "https://images.unsplash.com/photo-1756190564669-215843660e93?crop=entropy&cs=srgb&fm=jpg&q=85&w=2000",
   palaceNight: "https://images.pexels.com/photos/17067749/pexels-photo-17067749.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=1600",
   brideJewelry: "https://images.pexels.com/photos/38721833/pexels-photo-38721833.jpeg?_gl=1*193zmoi*_gcl_au*NjkyODQ0NjQuMTc4NDk3NDkyOQ..*_ga*MTg1MTY0OTY5Mi4xNzg0OTcyNjQy*_ga_8JE65Q40S6*czE3ODQ5NzQ2MDYkbzIkZzEkdDE3ODQ5ODEwMTYkajI2JGwwJGgw",
