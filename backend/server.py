@@ -42,6 +42,7 @@ class Inquiry(BaseModel):
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 
+
 class InquiryCreate(BaseModel):
     name: str
     email: EmailStr

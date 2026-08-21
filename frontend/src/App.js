@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
@@ -25,6 +24,7 @@ import Footer from "@/components/Footer";
 
 import WeddingJourney from "@/pages/WeddingJourney";
 import DestinationDetails from "@/pages/DestinationDetails";
+import WeddingPlannerHyderabad from "@/pages/WeddingPlannerHyderabad";
 
 function HomePage({ showFooter }) {
   return (
@@ -37,6 +37,7 @@ function HomePage({ showFooter }) {
       <Destinations />
       <FAQ />
       <Contact />
+
       <AnimatePresence>
         {showFooter && <Footer />}
       </AnimatePresence>
@@ -100,25 +101,36 @@ function App() {
       >
         <Routes>
 
-          <Route
-            path="/journey"
-            element={<WeddingJourney />}
-          />
-
+          {/* Homepage */}
           <Route
             path="/"
             element={<HomePage showFooter={showFooter} />}
           />
 
+          {/* Main Journey page */}
+          <Route
+            path="/journey"
+            element={<WeddingJourney />}
+          />
+
+          {/* Legacy / alternate Journey URL */}
           <Route
             path="/wedding-journey"
             element={<WeddingJourney />}
           />
 
+          {/* Destination detail pages */}
           <Route
             path="/destination/:slug"
             element={<DestinationDetails />}
           />
+
+          {/* SEO Landing Page — Hyderabad Wedding Planner */}
+          <Route
+            path="/wedding-planner-hyderabad"
+            element={<WeddingPlannerHyderabad />}
+          />
+
         </Routes>
       </main>
     </div>
