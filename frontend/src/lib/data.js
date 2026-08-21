@@ -1,6 +1,6 @@
 // Curated luxury Indian wedding imagery + site content
 
-export const IMAGES = {
+export const IMAGES = { 
   heroPalace: "https://images.unsplash.com/photo-1756190564669-215843660e93?crop=entropy&cs=srgb&fm=jpg&q=85&w=2000",
   palaceNight: "https://images.pexels.com/photos/17067749/pexels-photo-17067749.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=1600",
   brideJewelry: "https://images.pexels.com/photos/38721833/pexels-photo-38721833.jpeg?_gl=1*193zmoi*_gcl_au*NjkyODQ0NjQuMTc4NDk3NDkyOQ..*_ga*MTg1MTY0OTY5Mi4xNzg0OTcyNjQy*_ga_8JE65Q40S6*czE3ODQ5NzQ2MDYkbzIkZzEkdDE3ODQ5ODEwMTYkajI2JGwwJGgw",
@@ -11,7 +11,7 @@ export const IMAGES = {
 export const GALLERY = [
   { src: "https://customer-assets-lxgj4vgw.emergentagent.net/job_dream-design-deliver-1/artifacts/fvhghk73_PPP06624.webp", alt: "Bride in gold saree with mehendi hands and floral bouquet", tall: true },
   { src: "https://images.pexels.com/photos/38720993/pexels-photo-38720993.jpeg?_gl=1*pl1nsv*_gcl_au*NjkyODQ0NjQuMTc4NDk3NDkyOQ..*_ga*MTg1MTY0OTY5Mi4xNzg0OTcyNjQy*_ga_8JE65Q40S6*czE3ODQ5NzQ2MDYkbzIkZzEkdDE3ODQ5NzcyNTAkajU5JGwwJGgw", alt: "Luxury with a Vintage Soul", tall: false },
-  { src: "https://images.pexels.com/photos/38886736/pexels-photo-38886736.jpeg?_gl=1*1akr31h*_gcl_au*NjkyODQ0NjQuMTc4NDk3NDkyOQ..*_ga*MTg1MTY0OTY5Mi4xNzg0OTcyNjQy*_ga_8JE65Q40S6*czE3ODU5MjU3MTYkbzEwJGcxJHQxNzg1OTI1NzYzJGoxMyRsMCRoMA..", alt: "Moments that last forever", tall: true },
+  { src: "https://images.pexels.com/photos/39117397/pexels-photo-39117397.jpeg?_gl=1*8uzuil*_gcl_au*NjkyODQ0NjQuMTc4NDk3NDkyOQ..*_ga*MTg1MTY0OTY5Mi4xNzg0OTcyNjQy*_ga_8JE65Q40S6*czE3ODcyMjY4MDAkbzExJGcxJHQxNzg3MjI2ODQyJGoxOCRsMCRoMA..", alt: "Moments that last forever", tall: true },
   { src: "https://images.pexels.com/photos/38720994/pexels-photo-38720994.jpeg?_gl=1*jemi6j*_gcl_au*NjkyODQ0NjQuMTc4NDk3NDkyOQ..*_ga*MTg1MTY0OTY5Mi4xNzg0OTcyNjQy*_ga_8JE65Q40S6*czE3ODQ5NzQ2MDYkbzIkZzEkdDE3ODQ5NzY0OTMkajM5JGwwJGgw", alt: "A royal celebration", tall: false },
   { src: "https://images.pexels.com/photos/38721773/pexels-photo-38721773.jpeg?_gl=1*ffluux*_gcl_au*NjkyODQ0NjQuMTc4NDk3NDkyOQ..*_ga*MTg1MTY0OTY5Mi4xNzg0OTcyNjQy*_ga_8JE65Q40S6*czE3ODQ5NzQ2MDYkbzIkZzEkdDE3ODQ5ODA1NzgkajUzJGwwJGgw", alt: "The Art of Celebration", tall: false },
   { src: "https://images.pexels.com/photos/38722087/pexels-photo-38722087.jpeg?_gl=1*vvagi0*_gcl_au*NjkyODQ0NjQuMTc4NDk3NDkyOQ..*_ga*MTg1MTY0OTY5Mi4xNzg0OTcyNjQy*_ga_8JE65Q40S6*czE3ODQ5NzQ2MDYkbzIkZzEkdDE3ODQ5ODI2NzAkajU2JGwwJGgw", alt: "Luxury in every detail", tall: true },

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import "@/App.css";
@@ -8,70 +8,79 @@ import useLenis from "@/hooks/useLenis";
 
 import Loader from "@/components/Loader";
 import CustomCursor from "@/components/CustomCursor";
-import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
-
+import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
 import Marquee from "@/components/Marquee";
-import Destinations from "@/components/Destinations";
-import Gallery from "@/components/Gallery";
-import Journey from "@/components/Journey";
-import Testimonials from "@/components/Testimonials";
-import FAQ from "@/components/FAQ";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
 
-import WeddingJourney from "@/pages/WeddingJourney";
-import DestinationDetails from "@/pages/DestinationDetails";
-import WeddingPlannerHyderabad from "@/pages/WeddingPlannerHyderabad";
+// Lazy-loaded components
+const Gallery = lazy(() => import("@/components/Gallery"));
+const Destinations = lazy(() => import("@/components/Destinations"));
+const Testimonials = lazy(() => import("@/components/Testimonials"));
+const FAQ = lazy(() => import("@/components/FAQ"));
+const Contact = lazy(() => import("@/components/Contact"));
+const About = lazy(() => import("@/components/About"));
+const Footer = lazy(() => import("@/components/Footer"));
+
+// Lazy-loaded pages
+const WeddingJourney = lazy(() => import("@/pages/WeddingJourney"));
+const DestinationDetails = lazy(
+  () => import("@/pages/DestinationDetails")
+);
+const WeddingPlannerHyderabad = lazy(
+  () => import("@/pages/WeddingPlannerHyderabad")
+);
 
 function HomePage({ showFooter }) {
   return (
-    <>
-      <Hero />
+    <Suspense fallback={null}>
       <About />
-      <Marquee />
       <Gallery />
-      <Testimonials />
       <Destinations />
+      <Testimonials />
       <FAQ />
       <Contact />
 
       <AnimatePresence>
         {showFooter && <Footer />}
       </AnimatePresence>
-    </>
+    </Suspense>
   );
 }
 
 function App() {
-  const [showFooter, setShowFooter] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const [showFooter, setShowFooter] = useState(false);
 
   useLenis();
 
   useEffect(() => {
     const handleScroll = () => {
-      const hero = document.getElementById("hero");
+      const scrollPosition =
+        window.innerHeight + window.scrollY;
 
-      if (!hero) return;
+      const pageHeight =
+        document.documentElement.scrollHeight;
 
-      const heroBottom = hero.offsetTop + hero.offsetHeight;
-
-      setShowFooter(window.scrollY > heroBottom + 180);
+      // Show footer when user reaches near the bottom
+      setShowFooter(scrollPosition >= pageHeight - 500);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
 
     handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
     <div className="App grain" data-testid="app-root">
       <ScrollToTop />
+
       <CustomCursor />
 
       <Loader onDone={() => setLoaded(true)} />
@@ -90,9 +99,6 @@ function App() {
 
       <Header />
 
-      {/* Automatically scrolls to top on every route change */}
-      <ScrollToTop />
-
       <main
         style={{
           opacity: loaded ? 1 : 0,
@@ -100,11 +106,16 @@ function App() {
         }}
       >
         <Routes>
-
           {/* Homepage */}
           <Route
             path="/"
-            element={<HomePage showFooter={showFooter} />}
+            element={
+              <>
+                <Hero />
+                <Marquee />
+                <HomePage showFooter={showFooter} />
+              </>
+            }
           />
 
           {/* Main Journey page */}
@@ -130,7 +141,6 @@ function App() {
             path="/wedding-planner-hyderabad"
             element={<WeddingPlannerHyderabad />}
           />
-
         </Routes>
       </main>
     </div>
