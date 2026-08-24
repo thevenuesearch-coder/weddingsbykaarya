@@ -12,6 +12,8 @@ import ScrollToTop from "@/components/ScrollToTop";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
+import WeddingServices from "./pages/WeddingServices";
+
 
 /*
 |--------------------------------------------------------------------------
@@ -271,6 +273,13 @@ function App() {
               path="/destination-wedding-planner"
               element={
                 <DestinationWeddingPlanner />
+              }
+            />
+
+            <Route
+              path="/wedding-services"
+              element={
+                <WeddingServices />
               }
             />
 
