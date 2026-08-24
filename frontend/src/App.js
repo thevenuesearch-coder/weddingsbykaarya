@@ -13,7 +13,12 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 
-// Lazy-loaded components
+/*
+|--------------------------------------------------------------------------
+| Lazy-loaded Components
+|--------------------------------------------------------------------------
+*/
+
 const Gallery = lazy(() => import("@/components/Gallery"));
 const Destinations = lazy(() => import("@/components/Destinations"));
 const Testimonials = lazy(() => import("@/components/Testimonials"));
@@ -22,23 +27,101 @@ const Contact = lazy(() => import("@/components/Contact"));
 const About = lazy(() => import("@/components/About"));
 const Footer = lazy(() => import("@/components/Footer"));
 
-// Lazy-loaded pages
-const WeddingJourney = lazy(() => import("@/pages/WeddingJourney"));
-const DestinationDetails = lazy(
-  () => import("@/pages/DestinationDetails")
+/*
+|--------------------------------------------------------------------------
+| Lazy-loaded Pages
+|--------------------------------------------------------------------------
+*/
+
+const WeddingJourney = lazy(() =>
+  import("@/pages/WeddingJourney")
 );
-const WeddingPlannerHyderabad = lazy(
-  () => import("@/pages/WeddingPlannerHyderabad")
+
+const DestinationDetails = lazy(() =>
+  import("@/pages/DestinationDetails")
 );
+
+/*
+|--------------------------------------------------------------------------
+| Luxury Wedding Planner
+|
+| Supports both:
+| export default LuxuryWeddingPlanner
+|
+| and:
+| export { LuxuryWeddingPlanner }
+|--------------------------------------------------------------------------
+*/
+
+const LuxuryWeddingPlanner = lazy(() =>
+  import("@/pages/LuxuryWeddingPlanner").then((module) => ({
+    default:
+      module.default ||
+      module.LuxuryWeddingPlanner,
+  }))
+);
+
+/*
+|--------------------------------------------------------------------------
+| Hyderabad Wedding Planner
+|
+| Supports both default and named exports.
+|--------------------------------------------------------------------------
+*/
+
+const WeddingPlannerHyderabad = lazy(() =>
+  import("@/pages/WeddingPlannerHyderabad").then((module) => ({
+    default:
+      module.default ||
+      module.WeddingPlannerHyderabad,
+  }))
+);
+
+/*
+|--------------------------------------------------------------------------
+| Loading Fallback
+|--------------------------------------------------------------------------
+*/
+
+function PageLoading() {
+  return (
+    <div
+      style={{
+        minHeight: "100vh",
+        background: "#35151C",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        color: "#C9A46C",
+        fontFamily: "serif",
+        fontSize: "18px",
+        letterSpacing: "0.15em",
+      }}
+    >
+      LOADING...
+    </div>
+  );
+}
+
+/*
+|--------------------------------------------------------------------------
+| Homepage
+|--------------------------------------------------------------------------
+*/
 
 function HomePage({ showFooter }) {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<PageLoading />}>
       <About />
+
       <Gallery />
+
       <Destinations />
+
       <Testimonials />
+
       <FAQ />
+
       <Contact />
 
       <AnimatePresence>
@@ -48,11 +131,23 @@ function HomePage({ showFooter }) {
   );
 }
 
+/*
+|--------------------------------------------------------------------------
+| Main App
+|--------------------------------------------------------------------------
+*/
+
 function App() {
   const [loaded, setLoaded] = useState(false);
   const [showFooter, setShowFooter] = useState(false);
 
   useLenis();
+
+  /*
+  |--------------------------------------------------------------------------
+  | Footer visibility
+  |--------------------------------------------------------------------------
+  */
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,41 +157,66 @@ function App() {
       const pageHeight =
         document.documentElement.scrollHeight;
 
-      // Show footer when user reaches near the bottom
-      setShowFooter(scrollPosition >= pageHeight - 500);
+      setShowFooter(
+        scrollPosition >= pageHeight - 500
+      );
     };
 
-    window.addEventListener("scroll", handleScroll, {
-      passive: true,
-    });
+    window.addEventListener(
+      "scroll",
+      handleScroll,
+      {
+        passive: true,
+      }
+    );
 
     handleScroll();
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener(
+        "scroll",
+        handleScroll
+      );
     };
   }, []);
 
+  /*
+  |--------------------------------------------------------------------------
+  | Render
+  |--------------------------------------------------------------------------
+  */
+
   return (
-    <div className="App grain" data-testid="app-root">
+    <div
+      className="App grain"
+      data-testid="app-root"
+    >
+      {/* Scroll position reset */}
       <ScrollToTop />
 
+      {/* Custom cursor */}
       <CustomCursor />
 
-      <Loader onDone={() => setLoaded(true)} />
+      {/* Initial loader */}
+      <Loader
+        onDone={() => setLoaded(true)}
+      />
 
+      {/* Toast notifications */}
       <Toaster
         position="bottom-right"
         toastOptions={{
           style: {
             background: "#5B2230",
-            border: "1px solid rgba(201,164,107,0.4)",
+            border:
+              "1px solid rgba(201,164,107,0.4)",
             color: "#F8F5EF",
             borderRadius: 0,
           },
         }}
       />
 
+      {/* Global Header */}
       <Header />
 
       <main
@@ -105,43 +225,87 @@ function App() {
           transition: "opacity .8s ease",
         }}
       >
-        <Routes>
-          {/* Homepage */}
-          <Route
-            path="/"
-            element={
-              <>
-                <Hero />
-                <Marquee />
-                <HomePage showFooter={showFooter} />
-              </>
-            }
-          />
+        <Suspense fallback={<PageLoading />}>
+          <Routes>
 
-          {/* Main Journey page */}
-          <Route
-            path="/journey"
-            element={<WeddingJourney />}
-          />
+            {/* =====================================================
+                HOME PAGE
+            ===================================================== */}
 
-          {/* Legacy / alternate Journey URL */}
-          <Route
-            path="/wedding-journey"
-            element={<WeddingJourney />}
-          />
+            <Route
+              path="/"
+              element={
+                <>
+                  <Hero />
 
-          {/* Destination detail pages */}
-          <Route
-            path="/destination/:slug"
-            element={<DestinationDetails />}
-          />
+                  <Marquee />
 
-          {/* SEO Landing Page — Hyderabad Wedding Planner */}
-          <Route
-            path="/wedding-planner-hyderabad"
-            element={<WeddingPlannerHyderabad />}
-          />
-        </Routes>
+                  <HomePage
+                    showFooter={showFooter}
+                  />
+                </>
+              }
+            />
+
+            {/* =====================================================
+                LUXURY WEDDING PLANNER
+                SEO PAGE
+            ===================================================== */}
+
+            <Route
+              path="/luxury-wedding-planner"
+              element={
+                <LuxuryWeddingPlanner />
+              }
+            />
+
+            {/* =====================================================
+                JOURNEY
+            ===================================================== */}
+
+            <Route
+              path="/journey"
+              element={
+                <WeddingJourney />
+              }
+            />
+
+            {/* =====================================================
+                LEGACY JOURNEY URL
+            ===================================================== */}
+
+            <Route
+              path="/wedding-journey"
+              element={
+                <WeddingJourney />
+              }
+            />
+
+            {/* =====================================================
+                DESTINATION DETAILS
+            ===================================================== */}
+
+            <Route
+              path="/destination/:slug"
+              element={
+                <DestinationDetails />
+              }
+            />
+
+            {/* =====================================================
+                HYDERABAD WEDDING PLANNER
+                SEO LANDING PAGE
+            ===================================================== */}
+
+            <Route
+              path="/wedding-planner-hyderabad"
+              element={
+                <WeddingPlannerHyderabad />
+              }
+            />
+
+          </Routes>
+        </Suspense>
       </main>
     </div>
   );
