@@ -61,6 +61,14 @@ const LuxuryWeddingPlanner = lazy(() =>
   }))
 );
 
+const DestinationWeddingPlanner = lazy(() =>
+  import("@/pages/DestinationWeddingPlanner").then((module) => ({
+    default:
+      module.default ||
+      module.DestinationWeddingPlanner,
+  }))
+);
+
 /*
 |--------------------------------------------------------------------------
 | Hyderabad Wedding Planner
@@ -256,6 +264,13 @@ function App() {
               path="/luxury-wedding-planner"
               element={
                 <LuxuryWeddingPlanner />
+              }
+            />
+
+            <Route
+              path="/destination-wedding-planner"
+              element={
+                <DestinationWeddingPlanner />
               }
             />
 
