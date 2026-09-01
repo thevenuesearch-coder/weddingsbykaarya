@@ -3,15 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { scrollToId } from "../hooks/useLenis";
 
-/*
-|--------------------------------------------------------------------------
-| TRUSTED PARTNERS
-|--------------------------------------------------------------------------
-| These files already exist inside:
-|
-| frontend/public/partners/
-|
-*/
+
 
 const TRUSTED_BRANDS = [
   {
