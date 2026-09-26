@@ -4,6 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import "@/App.css";
 import { Toaster } from "sonner";
 
+
 import useLenis from "@/hooks/useLenis";
 
 import Loader from "@/components/Loader";
@@ -13,6 +14,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import WeddingServices from "./pages/WeddingServices";
+import IndianDestinationWedding from "./pages/IndianDestinationWedding";
 
 
 /*
@@ -267,6 +269,11 @@ function App() {
               element={
                 <LuxuryWeddingPlanner />
               }
+            />
+
+            <Route
+              path="/indian-destination-wedding"
+              element={<IndianDestinationWedding />}
             />
 
             <Route
